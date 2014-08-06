@@ -1,0 +1,15 @@
+[submodule ".vim/bundle/ag.vim"]
+	path = .vim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule ".vim/bundle/vim-rails"]
+	path = .vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule ".vim/bundles/ZoomWin"]
+	path = .vim/bundles/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule ".vim/bundle/ack-vim"]
+	path = .vim/bundle/ack-vim
+	url = https://github.com/mileszs/ack.vim.git
