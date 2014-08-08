@@ -51,8 +51,7 @@ autocmd BufReadPost *
   \ endif
 
 " Maintain some setup between sessions
-" set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
-set sessionoptions=blank,buffers,curdir,help,resize,tabpages,winsize
+set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -245,8 +244,8 @@ autocmd FileType html :set spl=en_us spell
 " => Ruby files
 """"""""""""""""""""""""""""""
 compiler ruby         " Enable compiler support for ruby
-" autocmd FileType ruby :set foldmethod=syntax
-" autocmd FileType ruby :set foldlevel=1
+ autocmd FileType ruby :set foldmethod=syntax
+ autocmd FileType ruby :set foldlevel=1
 
 """"""""""""""""""""""""""""""
 " => Plugin config
