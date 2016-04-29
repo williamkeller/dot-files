@@ -52,7 +52,10 @@ export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_GC_MALLOC_LIMIT=500000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
-alias appshell="ssh wkeller@app-shell01.iad.livingsocial.net"
+# tmux environment
+alias tn="tmux new-session -s "
+alias tl="tmux list-sessions"
+alias ta="tmux attach-session -t "
 
 PS1="\[$COLOR_WHITE\]\n[\W]"          # basename of pwd
 PS1+="\[\$(git_color)\]"        # colors git status

@@ -52,11 +52,6 @@ export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_GC_MALLOC_LIMIT=500000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
-alias appshell="ssh wkeller@app-shell01.iad.livingsocial.net"
-alias stub_branson="git apply /Users/williamkeller/code/babysoft-patches/new_stub_branson.patch"
-alias unstub_branson="git apply /Users/williamkeller/code/babysoft-patches/new_unstub_branson.patch"
-alias wn="wakeonlan 60:c5:47:23:65:99"
-
 PS1="\[$COLOR_WHITE\]\n[\W]"          # basename of pwd
 PS1+="\[\$(git_color)\]"        # colors git status
 PS1+="\$(git_branch)"           # prints current branch
