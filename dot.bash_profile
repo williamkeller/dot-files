@@ -64,7 +64,7 @@ PS1+="\$(git_branch)"           # prints current branch
 PS1+="\[$COLOR_BLUE\]\$\[$COLOR_WHITE\] "   # '#' for root, else '$'
 export PS1
 
-if [ -f ~/.bashrc]; then
+if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
