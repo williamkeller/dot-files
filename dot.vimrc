@@ -107,14 +107,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set t_Co=256
-" set background=dark
-" colorscheme default
-colorscheme desert
+colorscheme solarized
 set background=dark
-highlight CursorLine ctermbg=236
-highlight CursorLineNr ctermbg=236 ctermfg=0
-
 
 set cursorline
 
