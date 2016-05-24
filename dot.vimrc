@@ -244,7 +244,6 @@ compiler ruby         " Enable compiler support for ruby
 """"""""""""""""""""""""""""""
 " => Plugin config
 """"""""""""""""""""""""""""""
-nnoremap <F5> :GundoToggle<CR>
 map <leader>d :NERDTreeToggle<CR>
 
 " Allow for local customization, but don't error out if file is not

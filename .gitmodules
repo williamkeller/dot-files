@@ -52,9 +52,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = dot.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/Gundo"]
-	path = dot.vim/bundle/Gundo
-	url = https://github.com/vim-scripts/Gundo.git
 [submodule ".vim/bundle/tComment"]
 	path = dot.vim/bundle/tComment
 	url = https://github.com/vim-scripts/tComment.git
