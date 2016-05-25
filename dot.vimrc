@@ -246,6 +246,10 @@ compiler ruby         " Enable compiler support for ruby
 """"""""""""""""""""""""""""""
 map <leader>d :NERDTreeToggle<CR>
 
+" vimwiki config
+let g:vimwiki_list = [ { 'path': '~/Documents/wiki' } ]
+
+
 " Allow for local customization, but don't error out if file is not
 " present
 try
