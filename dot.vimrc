@@ -75,7 +75,7 @@ set showmatch "Show matching bracets when text indicator is over them
 set noerrorbells " No sound on errors
 set novisualbell
 set t_vb=
-set nu " print line numbers in gutter
+set relativenumber
 set numberwidth=4
 
 " show trailing whitespace
