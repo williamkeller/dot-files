@@ -247,8 +247,11 @@ compiler ruby         " Enable compiler support for ruby
 map <leader>d :NERDTreeToggle<CR>
 
 " vimwiki config
-let g:vimwiki_list = [ { 'path': '~/Documents/wiki' } ]
+let g:vimwiki_list = [ { 'path': '~/Documents/wiki' }, { 'path': '~/Documents/gamingwiki' } ]
 
+" Exuberant Ctags
+set tags=.tags
+let g:rails_ctags_arguments = ['-f .tags -R']
 
 " Allow for local customization, but don't error out if file is not
 " present
