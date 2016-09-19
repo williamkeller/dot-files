@@ -1,38 +1,10 @@
 
-.CFUserTextEncoding
 .DS_Store
-.Trash
-.bash_history
-.bundle
-.cache
-.cups
-.dropbox
-.gem
-.git
-.gitconfig
-.jrnl_config
-.my.cnf
-.mysql_history
-.rbenv
-.rnd
-.ssh
-.subversion
-.viminfo
-Applications
-Desktop
-Documents
-Downloads
-Dropbox
-Google Drive
-Library
-Movies
-Music
-Pictures
-Public
-bin
-code
-credentials.txt
-projects
-tmp
-doc/tags
+dot.vim/bundle/*
+!dot.vim/bundle/Vundle.vim
 
+# Temporary files used for development, 
+# that will probably go away
+.vim
+dot.vim/old_bundle_list
+dot.vimrc.old
