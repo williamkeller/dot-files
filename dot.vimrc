@@ -206,9 +206,9 @@ set laststatus=2
 " Format the statusline
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
-
+ 
 function! CurDir()
-  let curdir = substitute(getcwd(), '/Users/williamkeller/', "~/", "g")
+  let curdir = substitute(getcwd(), '/Users/william/', "~/", "g")
   return curdir
 endfunction
 
@@ -247,7 +247,7 @@ compiler ruby         " Enable compiler support for ruby
 map <leader>d :NERDTreeToggle<CR>
 
 " vimwiki config
-let g:vimwiki_list = [ { 'path': '~/Documents/wiki' }, { 'path': '~/Documents/gamingwiki' } ]
+let g:vimwiki_list = [ { 'path': '~/Documents/wiki' } ]
 
 " Exuberant Ctags
 set tags=.tags
@@ -263,6 +263,15 @@ try
   source ~/.local/vimrc
 catch
 endtry
+
+try
+  source .vimrc.local
+catch
+endtry
+
+
+" Load a directory config if present
+" set exrc
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>

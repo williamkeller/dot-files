@@ -61,3 +61,12 @@
 [submodule "dot.vim/bundle/vimwiki"]
 	path = dot.vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "dot.vim/bundle/vim-snipmate"]
+	path = dot.vim/bundle/vim-snipmate
+	url = git@github.com:garbas/vim-snipmate.git
+[submodule "dot.vim/bundle/tlib_vim"]
+	path = dot.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "dot.vim/bundle/vim-addon-mw-utils"]
+	path = dot.vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git

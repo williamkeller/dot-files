@@ -1,0 +1,5 @@
+# Directives specific to MuscleSound development
+
+export R_HOME=/Library/Frameworks/R.framework/Resources
+alias msprodssh="ssh deployer@166.78.112.18"
+alias msstagessh="ssh deployer@23.253.23.41"
