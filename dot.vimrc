@@ -5,6 +5,7 @@ filetype off
 filetype plugin indent on
 syntax on
 
+runtime macros/matchit.vim
 
 " Remap some keys to make things a little easier on my hands
 let mapleader = ","
@@ -20,6 +21,15 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+
+" Some basic configurations
+set hidden  " switch buffers without saving
+set backspace=eol,start,indent  " make backspace sane
+set cmdheight=1
+set magic  " make regular expressions sane
+set showmatch  " show matching brackets
+
+
 " Bundles
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -33,6 +43,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -41,8 +52,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 call vundle#end()
+
 
 "
 " Plugin Configuration
@@ -121,3 +135,18 @@ set mouse=
 " Undesirable whitespace
 set listchars=tab:>-,trail:.,extends:#,nbsp:.
 set list
+
+
+" Window splits
+set equalalways  " make new windows equal in size
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+" Language tweaks, probably should be in separate files
+compiler ruby
+  autocmd FileType ruby :set foldmethod=syntax
+  autocmd FileType ruby :set foldlevel=1
