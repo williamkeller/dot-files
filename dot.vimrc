@@ -7,13 +7,11 @@ syntax on
 
 runtime macros/matchit.vim
 
+
 " Remap some keys to make things a little easier on my hands
 let mapleader = ","
 let g:mapleader = ","
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+
 
 " Unmap the arrow keys
 noremap <Up> <NOP>
@@ -99,15 +97,6 @@ set incsearch
 map <silent> <leader><cr> :noh<cr>  " clear search highlighting
 
 
-" Remap some keys to make things a little easier on my hands
-let mapleader = ","
-let g:mapleader = ","
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-
 " Tabs and indentation
 set expandtab
 set shiftwidth=2
@@ -150,3 +139,9 @@ map <C-l> <C-W>l
 compiler ruby
   autocmd FileType ruby :set foldmethod=syntax
   autocmd FileType ruby :set foldlevel=1
+
+
+
+
+
+
