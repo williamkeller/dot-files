@@ -135,13 +135,23 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 
+" Buffer management
+map <leader>bd :Bclose<cr>  " Close the current buffer
+map <leader>ba :1,300 bd!<cr> " Close all the buffers
+
+
 " Language tweaks, probably should be in separate files
 compiler ruby
-  autocmd FileType ruby :set foldmethod=syntax
-  autocmd FileType ruby :set foldlevel=1
+autocmd FileType ruby :set foldmethod=syntax
+autocmd FileType ruby :set foldlevel=1
+autocmd FileType ruby :map <Left> :A
 
-
-
+" If there is a local configuration, load that
+try
+  source .vimrc.local
+catch
+  " No error if no local file
+endtry
 
 
 
