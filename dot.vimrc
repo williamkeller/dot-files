@@ -114,7 +114,7 @@ set statusline=\ %t\ Line:%l/%L\ \ %{fugitive#statusline()}
 
 " Exuberant ctags
 set tags=.tags
-let g:rails_ctags_arguments = ['-f .tags -R']
+let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
 
 
 " Mouse
@@ -145,6 +145,9 @@ compiler ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby :set foldlevel=1
 autocmd FileType ruby :map <Left> :A
+
+" Toggle fold with just spacebar
+nnoremap <Space> za
 
 " If there is a local configuration, load that
 try
