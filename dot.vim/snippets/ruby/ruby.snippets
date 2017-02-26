@@ -19,4 +19,13 @@ snippet ife
 	else
 		${3}
 	end
-
+snippet ppv Pretty print value
+	${1:var name} = #{$1.inspect}
+snippet def Function definition
+	def ${1:name}${2:(vars)}
+		${0}
+	end
+snippet defs Static function definition
+	def self.${1:name}${2:(vars)}
+		${0}
+	end

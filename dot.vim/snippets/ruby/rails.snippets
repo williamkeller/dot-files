@@ -3,3 +3,9 @@ snippet ff form_for
 		${0}
 	
 	<% end %>
+snippet bt belongs_to
+	belongs_to :${1:model}
+snippet hm has_many
+	has_many :${1:models}
+snippet valp validates presence
+	validates :${1:attribute}, presence: true

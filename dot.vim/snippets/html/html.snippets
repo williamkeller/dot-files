@@ -9,12 +9,16 @@ snippet head
 		<meta charset="utf-8" />
 		${0}
 	</head>
+snippet link
+	<link href="${0:url}" rel="stylesheet" media="screen">
 snippet body
 	<body>
 		${0}
 	</body>
 snippet a
 	<a href="${1:url}">${2:link text}</a>
+snippet img
+	<img src="${1}">${0}</img>
 snippet script
 	<script src="${1}"></script>
 
