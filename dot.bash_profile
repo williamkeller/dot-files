@@ -6,8 +6,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Load all of the modules
-if [ -d ~/.bash-modules ]; then
-  for module in ~/.bash-modules/*; do
+if [ -d ~/.bash_modules ]; then
+  for module in ~/.bash_modules/*; do
     source $module
   done
 fi
