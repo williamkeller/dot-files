@@ -109,7 +109,7 @@ set smartindent
 
 " Status line
 let g:airline_theme='term'
-" set laststatus=2
+set laststatus=2
 " set statusline=\ %t\ Line:%l/%L\ \ %{fugitive#statusline()} 
 
 
