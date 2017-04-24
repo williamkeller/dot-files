@@ -11,7 +11,7 @@ runtime macros/matchit.vim
 " Remap some keys to make things a little easier on my hands
 let mapleader = ","
 let g:mapleader = ","
-
+imap jj <Esc>
 
 " Unmap the arrow keys
 noremap <Up> <NOP>
@@ -32,27 +32,27 @@ set showmatch  " show matching brackets
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-
-Plugin 'vimwiki/vimwiki'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-commentary'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mileszs/ack.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-
+  Plugin 'vimwiki/vimwiki'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'vim-ruby/vim-ruby'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-rails'
+  Plugin 'tpope/vim-rake'
+  Plugin 'tpope/vim-bundler'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'jlanzarotta/bufexplorer'
+  Plugin 'kana/vim-textobj-user'
+  Plugin 'nelstrom/vim-textobj-rubyblock'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 
@@ -108,8 +108,9 @@ set smartindent
 
 
 " Status line
-set laststatus=2
-set statusline=\ %t\ Line:%l/%L\ \ %{fugitive#statusline()} 
+let g:airline_theme='term'
+" set laststatus=2
+" set statusline=\ %t\ Line:%l/%L\ \ %{fugitive#statusline()} 
 
 
 " Exuberant ctags
