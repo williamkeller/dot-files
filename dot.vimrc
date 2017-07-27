@@ -32,6 +32,7 @@ set showmatch  " show matching brackets
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
   Plugin 'vimwiki/vimwiki'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'vim-ruby/vim-ruby'
@@ -41,6 +42,8 @@ call vundle#begin()
   Plugin 'tpope/vim-rake'
   Plugin 'tpope/vim-bundler'
   Plugin 'tpope/vim-commentary'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-endwise'
   Plugin 'MarcWeber/vim-addon-mw-utils'
   Plugin 'tomtom/tlib_vim'
   Plugin 'garbas/vim-snipmate'
@@ -76,6 +79,9 @@ map <leader>bb :BufExplorer<cr>
 colorscheme solarized
 set background=dark
 
+" Turn of fugly scrollbars in MacVim
+set guioptions=
+
 
 " Swap files and backups
 " Don't really need this, since projects are in git
@@ -110,8 +116,6 @@ set smartindent
 " Status line
 let g:airline_theme='term'
 set laststatus=2
-" set statusline=\ %t\ Line:%l/%L\ \ %{fugitive#statusline()} 
-
 
 " Exuberant ctags
 set tags=.tags
@@ -146,9 +150,12 @@ compiler ruby
 autocmd FileType ruby :set foldmethod=syntax
 autocmd FileType ruby :set foldlevel=1
 autocmd FileType ruby :map <Left> :A
+nnoremap <leader>r :Rake<cr>
+
 
 " Toggle fold with just spacebar
 nnoremap <Space> za
+nnoremap z1 :set foldlevel=1<cr>
 
 " If there is a local configuration, load that
 try

@@ -1,0 +1,12 @@
+snippet ajax jQuery ajax call
+	$.ajax({
+		url: ${1:url},
+		dataType: ${2:'json'},
+		success: (data)=> {
+			${0}
+		},
+		error: (xhr, status, err) => {
+		}
+	});
+
+
