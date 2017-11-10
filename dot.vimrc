@@ -11,9 +11,8 @@ runtime macros/matchit.vim
 " Remap some keys to make things a little easier on my hands
 let mapleader = ","
 let g:mapleader = ","
-imap jj <Esc>
 
-" Unmap the arrow keys
+" Unmap the arrow keys; real mean use motion keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -31,8 +30,9 @@ set showmatch  " show matching brackets
 " Bundles
 set rtp+=~/.vim/bundle/Vundle.vim
 
+" Call :PluginInstall in vim after
+" making any changes to this section
 call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
   Plugin 'vimwiki/vimwiki'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'vim-ruby/vim-ruby'
@@ -145,16 +145,9 @@ map <leader>bd :Bclose<cr>  " Close the current buffer
 map <leader>ba :1,300 bd!<cr> " Close all the buffers
 
 
-" Language tweaks, probably should be in separate files
-compiler ruby
-autocmd FileType ruby :set foldmethod=syntax
-autocmd FileType ruby :set foldlevel=1
-autocmd FileType ruby :map <Left> :A
-nnoremap <leader>r :Rake<cr>
-
-
 " Toggle fold with just spacebar
 nnoremap <Space> za
+nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
 " If there is a local configuration, load that
