@@ -84,7 +84,7 @@ let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 map <leader>bb :BufExplorer<cr>
 
 " Colors
-colorscheme solarized
+colorscheme harlequin
 set background=dark
 
 " Turn of fugly scrollbars in MacVim
