@@ -63,8 +63,16 @@ call vundle#end()
 " Plugin Configuration
 "
 
+" fzf
+set rtp+=/usr/local/opt/fzf
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>t :Tags<CR>
+
 " vimwiki
-let g:vimwiki_list = [ { 'path': '~/Documents/wiki' } ]
+let g:vimwiki_list = [ 
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/work' }, 
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' }]
 
 " nerdtree
 map <leader>d :NERDTreeToggle<CR>
