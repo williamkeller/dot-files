@@ -34,7 +34,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " making any changes to this section
 call vundle#begin()
   Plugin 'vimwiki/vimwiki'
-  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'junegunn/fzf.vim'
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-fugitive'
