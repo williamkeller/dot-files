@@ -71,8 +71,9 @@ nmap <Leader>t :Tags<CR>
 
 " vimwiki
 let g:vimwiki_list = [ 
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/work' }, 
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' }]
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/work' },
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' },
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/bigland' }]
 
 " nerdtree
 map <leader>d :NERDTreeToggle<CR>
