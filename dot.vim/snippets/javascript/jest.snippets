@@ -1,0 +1,19 @@
+snippet describe A scoped test block
+	describe('${1}', () => {
+		${0}
+	})
+snippet test A test case
+	test('${1:test description}', () => {
+		${0}
+	})
+snippet beforeEach Setup block
+	beforeEach(() => {
+		${0}
+	})
+snippet afterEach Teardown block
+	afterEach(() => {
+		${0}
+	})
+snippet spy spyOn block
+	jest.spyOn(${1:object}, '${2:method}')
+	${0}
