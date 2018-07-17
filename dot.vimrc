@@ -56,6 +56,7 @@ call vundle#begin()
   Plugin 'nelstrom/vim-textobj-rubyblock'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'mhinz/vim-signify'
 call vundle#end()
 
 
@@ -70,7 +71,7 @@ nmap <Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
 
 " vimwiki
-let g:vimwiki_list = [ 
+let g:vimwiki_list = [
   \ { 'path': '/Users/william/Google\ Drive/vimwiki/work' },
   \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' },
   \ { 'path': '/Users/william/Google\ Drive/vimwiki/bigland' }]
@@ -121,6 +122,8 @@ set textwidth=80
 set autoindent
 set smartindent
 
+" Signify gutter settings
+let g:signify_vcs_list = [ 'git' ]
 
 " Status line
 let g:airline_theme='term'
