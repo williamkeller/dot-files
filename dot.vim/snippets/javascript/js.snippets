@@ -1,2 +1,8 @@
 snippet req require
 	var ${1:variable} = require("${2:file}");
+snippet retprom return new Promise
+	return new Promise((resolve, reject) => {
+		${0}
+	})
+snippet inspect
+	console.log(util.inspect(${0}))
