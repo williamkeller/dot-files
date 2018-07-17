@@ -19,6 +19,8 @@ ln -s $(pwd)/dot.vim ~/.vim
 
 ln -s $(pwd)/dot.vimrc ~/.vimrc
 
+ln -s $(pwd)/dot.ctags ~/.ctags
+
 I need a way to specify the home directory for cases like Windows. 
 
 #### Vim setup
