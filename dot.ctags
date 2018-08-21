@@ -1,3 +1,4 @@
+-f .tags
 --recurse=yes
 
 --exclude=.git
@@ -5,8 +6,6 @@
 --exclude=tmp
 --exclude=node_modules
 --exclude=.bundle
-
---languages=-javascript,sql
 
 --regex-ruby=/.*alias(_method)?[[:space:]]+:([[:alnum:]_=!?]+),?[[:space:]]+:([[:alnum:]_=!]+)/\2/f,function/
 --regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/

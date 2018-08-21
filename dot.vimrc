@@ -130,8 +130,9 @@ let g:airline_theme='term'
 set laststatus=2
 
 " Exuberant ctags
-set tags=.tags
-let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
+" set tags=.tags
+" let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
+set tags=.tags,tags
 
 
 " Mouse
