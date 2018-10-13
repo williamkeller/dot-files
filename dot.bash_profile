@@ -1,5 +1,5 @@
 
-export PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/opt/icu4c/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc

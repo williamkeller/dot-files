@@ -57,6 +57,7 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'mhinz/vim-signify'
+  Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 
@@ -72,9 +73,8 @@ nmap <Leader>t :Tags<CR>
 
 " vimwiki
 let g:vimwiki_list = [
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/work' },
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' },
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/bigland' }]
+  \ { 'path': '/Users/william/Projects/sywtbagd/wiki' },
+  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' }]
 
 " nerdtree
 map <leader>d :NERDTreeToggle<CR>
@@ -88,6 +88,8 @@ map <leader>bb :BufExplorer<cr>
 " Colors
 colorscheme harlequin
 set background=dark
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
 
 " Turn of fugly scrollbars in MacVim
 set guioptions=
@@ -118,7 +120,7 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set smarttab
-set textwidth=80
+set textwidth=110
 set autoindent
 set smartindent
 
@@ -130,9 +132,9 @@ let g:airline_theme='term'
 set laststatus=2
 
 " Exuberant ctags
-" set tags=.tags
 " let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
-set tags=.tags,tags
+" set tags=.tags;
+map <leader>t :!ctags -R <CR><CR>
 
 
 " Mouse
@@ -163,12 +165,11 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
-" If there is a local configuration, load that
-try
-  source .vimrc.local
-catch
-  " No error if no local file
-endtry
+let g:clang_library_path='/Applications/Xcode.app/Contents/Frameworks/libclang.dylib'
+
+" Allow per-project configuration
+set exrc
+set secure
 
 
 
