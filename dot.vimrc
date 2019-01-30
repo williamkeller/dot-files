@@ -57,7 +57,6 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'mhinz/vim-signify'
-  Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 
@@ -165,7 +164,6 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
-let g:clang_library_path='/Applications/Xcode.app/Contents/Frameworks/libclang.dylib'
 
 " Allow per-project configuration
 set exrc
