@@ -57,6 +57,7 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'mhinz/vim-signify'
+  Plugin 'LanguageClient-neovim', { 'pinned': 1 }
 call vundle#end()
 
 
@@ -68,7 +69,7 @@ call vundle#end()
 set rtp+=/usr/local/opt/fzf
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader>t :Tags<CR>
+" nmap <Leader>t :Tags<CR>
 
 " vimwiki
 let g:vimwiki_list = [
@@ -83,6 +84,11 @@ let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 
 " bufexplorer
 map <leader>bb :BufExplorer<cr>
+
+
+" vim-javascript
+let g:javascript_plugin_flow = 1
+
 
 " Colors
 colorscheme harlequin
@@ -127,8 +133,8 @@ set smartindent
 let g:signify_vcs_list = [ 'git' ]
 
 " Status line
-let g:airline_theme='term'
-set laststatus=2
+" let g:airline_theme='term'
+" set laststatus=2
 
 " Exuberant ctags
 " let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
@@ -169,5 +175,20 @@ nnoremap z1 :set foldlevel=1<cr>
 set exrc
 set secure
 
+" Language Server Protocol
+" set rtp+=~/.vim/bundles/LanguageClient-neovim
+" let g:LanguageClient_serverCommands = {
+"   \ 'javascript' : ['/usr/local/bin/typescript-language-server', '--stdio']
+"   \ }
+let g:LanguageClient_rootMarkers = {
+\   'javascript': ['.flowconfig', 'package.json']
+\ }
 
-
+let g:LanguageClient_serverCommands={
+\   'javascript': ['flow', 'lsp'],
+\   'javascript.jsx': ['flow', 'lsp']
+\}
+nnoremap <leader>ft :call LanguageClient_textDocument_hover()<CR>
+nnoremap <leader>fd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <leader>fr :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
