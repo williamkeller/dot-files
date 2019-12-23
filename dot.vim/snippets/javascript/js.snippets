@@ -1,8 +1,47 @@
 snippet req require
-	var ${1:variable} = require("${2:file}");
+	const ${1:variable} = require('${2:file}')
 snippet retprom return new Promise
 	return new Promise((resolve, reject) => {
 		${0}
 	})
 snippet inspect
 	console.log(util.inspect(${0}))
+	
+snippet if
+	if(${1}) {
+		${0}
+	}
+snippet ife if else
+	if(${1}) {
+		${2}
+	} else {
+		${0}
+	}
+snippet cla class
+	class ${1:classname} {
+		${0}
+	}
+snippet clae class extending
+	class ${1:classname} extends ${2:parent} {
+		${0}
+	}
+snippet con constructor
+	constructor(${1:args}) {
+		${0}
+	}
+snippet for
+	for(${1}) {
+		$0
+	}
+snippet forin
+	for(${1} in ${2}) {
+		$0
+	}
+snippet forof
+	for(${1} of ${2}) {
+		${0}
+	}
+snippet log
+	console.log(${0})
+snippet ilog interpolated log
+	console.log(`${0:output}`)

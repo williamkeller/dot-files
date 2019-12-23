@@ -1,6 +1,5 @@
 
-" No need for backwards vi compatibility
-set nocompatible
+
 filetype off
 filetype plugin indent on
 syntax on
@@ -58,6 +57,10 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'mhinz/vim-signify'
   Plugin 'LanguageClient-neovim', { 'pinned': 1 }
+  Plugin 'janko/vim-test'
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
 call vundle#end()
 
 
@@ -107,13 +110,13 @@ set nowb
 set noswapfile
 
 
-" Line numbering 
+" Line numbering
 set relativenumber
 set numberwidth=4
 
 
 " Searching
-set ignorecase  
+set ignorecase
 set smartcase
 set hlsearch
 set incsearch
@@ -134,7 +137,7 @@ let g:signify_vcs_list = [ 'git' ]
 
 " Status line
 " let g:airline_theme='term'
-" set laststatus=2
+set laststatus=2
 
 " Exuberant ctags
 " let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
@@ -176,19 +179,27 @@ set exrc
 set secure
 
 " Language Server Protocol
-" set rtp+=~/.vim/bundles/LanguageClient-neovim
-" let g:LanguageClient_serverCommands = {
-"   \ 'javascript' : ['/usr/local/bin/typescript-language-server', '--stdio']
-"   \ }
 let g:LanguageClient_rootMarkers = {
-\   'javascript': ['.flowconfig', 'package.json']
+\   'javascript': ['package.json']
 \ }
 
 let g:LanguageClient_serverCommands={
-\   'javascript': ['flow', 'lsp'],
-\   'javascript.jsx': ['flow', 'lsp']
+\   'javascript': ['javascript-typescript-stdio']
 \}
-nnoremap <leader>ft :call LanguageClient_textDocument_hover()<CR>
-nnoremap <leader>fd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <leader>fr :call LanguageClient_textDocument_references()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+let signcolumn=1
+
+nnoremap <leader>lt :call LanguageClient_textDocument_hover()<CR>
+nnoremap <leader>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <leader>lr :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
+
+" Testing
+nnoremap tf :TestFile<CR>
+nnoremap tt :TestLast<CR>
+nnoremap ts :TestSuite<CR>
+nnoremap tn :TestNearest<CR>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+:pythonx import pynvim
+
