@@ -201,5 +201,5 @@ nnoremap tn :TestNearest<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-:pythonx import pynvim
+" :python3 import pynvim
 

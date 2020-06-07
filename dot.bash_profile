@@ -1,6 +1,4 @@
-
 export PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/opt/icu4c/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
@@ -12,5 +10,7 @@ if [ -d ~/.bash_modules ]; then
   done
 fi
 
+# Let's go Brazillian!
+# export LC_ALL=pt_BR.UTF-8
 
 
