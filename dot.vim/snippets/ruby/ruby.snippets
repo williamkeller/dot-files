@@ -3,7 +3,7 @@ snippet cla Plain class definition
 		${0}
 	end
 
-snippet cla Derived class definition
+snippet clad Derived class definition
 	class ${1:name} < ${2:super}
 		${0}
 	end
@@ -29,3 +29,7 @@ snippet defs Static function definition
 	def self.${1:name}${2:(vars)}
 		${0}
 	end
+snippet req
+	require '${1:library}'
+snippet rel
+	require_relative '${1:file}'

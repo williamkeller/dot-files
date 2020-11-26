@@ -1,5 +1,4 @@
 
-
 filetype off
 filetype plugin indent on
 syntax on
@@ -11,12 +10,11 @@ runtime macros/matchit.vim
 let mapleader = ","
 let g:mapleader = ","
 
-" Unmap the arrow keys; real mean use motion keys
+" Unmap the arrow keys; real men use motion keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
 
 " Some basic configurations
 set hidden  " switch buffers without saving
@@ -53,8 +51,9 @@ call vundle#begin()
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'kana/vim-textobj-user'
   Plugin 'nelstrom/vim-textobj-rubyblock'
-  Plugin 'vim-airline/vim-airline'
-  Plugin 'vim-airline/vim-airline-themes'
+  " Plugin 'vim-airline/vim-airline'
+  " Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'itchyny/lightline.vim'
   Plugin 'mhinz/vim-signify'
   Plugin 'LanguageClient-neovim', { 'pinned': 1 }
   Plugin 'janko/vim-test'
@@ -76,13 +75,17 @@ nmap <Leader>f :Files<CR>
 
 " vimwiki
 let g:vimwiki_list = [
-  \ { 'path': '/Users/william/Projects/sywtbagd/wiki' },
-  \ { 'path': '/Users/william/Google\ Drive/vimwiki/games' }]
+\ { 'path': '~/Documents/Journal/' }
+\ ]
 
 " nerdtree
 map <leader>d :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 
 " ack
+" Might be a good idea to do a check to see if ag is present on the system, and if not
+" fall back to ack. It's actually a problem when I pull this down on to a new machine
+" where ag isn't installed.
 let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 
 " bufexplorer
@@ -111,7 +114,8 @@ set noswapfile
 
 
 " Line numbering
-set relativenumber
+" set relativenumber
+set number
 set numberwidth=4
 
 
@@ -137,6 +141,17 @@ let g:signify_vcs_list = [ 'git' ]
 
 " Status line
 " let g:airline_theme='term'
+" let g:lightline = {'colorscheme': 'solorized dark'}
+let g:lightline = {
+\ 'colorscheme': 'wombat',
+\ 'active': {
+\   'left': [ [ 'mode', 'paste' ],
+\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+\ },
+\ 'component_function': {
+\   'gitbranch': 'FugitiveHead'
+\ },
+\ }
 set laststatus=2
 
 " Exuberant ctags
@@ -173,6 +188,12 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
+" Cursor line
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=Grey ctermbg=0
 
 " Allow per-project configuration
 set exrc
@@ -180,26 +201,31 @@ set secure
 
 " Language Server Protocol
 let g:LanguageClient_rootMarkers = {
-\   'javascript': ['package.json']
+\   'javascript': ['package.json'],
+\   'ruby': ['Gemfile']
 \ }
 
 let g:LanguageClient_serverCommands={
-\   'javascript': ['javascript-typescript-stdio']
+\   'javascript': ['javascript-typescript-stdio'],
+\   'ruby': ['solargraph', 'stdio'],
+\   'python': ['/usr/local/bin/pyls']
 \}
-let signcolumn=1
+
+let g:deoplete#enable_at_startup = 1
+:set pyxversion=3
+:pythonx import pynvim
 
 nnoremap <leader>lt :call LanguageClient_textDocument_hover()<CR>
 nnoremap <leader>ld :call LanguageClient_textDocument_definition()<CR>
 nnoremap <leader>lr :call LanguageClient_textDocument_references()<CR>
+nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
 nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
+
+let signcolumn=1
 
 " Testing
 nnoremap tf :TestFile<CR>
 nnoremap tt :TestLast<CR>
 nnoremap ts :TestSuite<CR>
 nnoremap tn :TestNearest<CR>
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-" :python3 import pynvim
 
