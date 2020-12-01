@@ -7,17 +7,13 @@ often enough now to bother.
 
 #### Link each of the dotfiles to your home directory
 
-ln -s $(pwd)/dot.bash_profile ~/.bash_profile
-
-ln -s $(pwd)/dot.bashrc ~/.bashrc
-
-ln -s $(pwd)/dot.bash_modules ~/.bash_modules
-
-ln -s $(pwd)/dot.tmux.conf ~/.tmux.conf
+ln -s $(pwd)/dot.zshrc ~/.zshrc
 
 ln -s $(pwd)/dot.vim ~/.vim
 
 ln -s $(pwd)/dot.vimrc ~/.vimrc
+
+ln -s $(pwd)/dot.tmux.conf ~/.tmux.conf
 
 ln -s $(pwd)/dot.ctags ~/.ctags
 

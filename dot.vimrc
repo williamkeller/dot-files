@@ -31,6 +31,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " making any changes to this section
 call vundle#begin()
   Plugin 'vimwiki/vimwiki'
+  Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
   Plugin 'junegunn/fzf.vim'
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'tpope/vim-surround'
@@ -51,21 +52,22 @@ call vundle#begin()
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'kana/vim-textobj-user'
   Plugin 'nelstrom/vim-textobj-rubyblock'
-  " Plugin 'vim-airline/vim-airline'
-  " Plugin 'vim-airline/vim-airline-themes'
   Plugin 'itchyny/lightline.vim'
   Plugin 'mhinz/vim-signify'
-  Plugin 'LanguageClient-neovim', { 'pinned': 1 }
   Plugin 'janko/vim-test'
+
+  " Language Server support
   Plugin 'Shougo/deoplete.nvim'
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
+  Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
 call vundle#end()
 
 
 "
 " Plugin Configuration
 "
+
 
 " fzf
 set rtp+=/usr/local/opt/fzf
@@ -75,7 +77,7 @@ nmap <Leader>f :Files<CR>
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '~/Documents/Journal/' }
+\ { 'path': '~/Google Drive/vimwiki/' }
 \ ]
 
 " nerdtree
@@ -199,6 +201,12 @@ highlight CursorLine guibg=Grey ctermbg=0
 set exrc
 set secure
 
+" set rtp+=~/.vim/bundles/LanguageClient-neovim
+let g:deoplete#enable_at_startup = 1
+
+set pyxversion=3
+pythonx import pynvim
+
 " Language Server Protocol
 let g:LanguageClient_rootMarkers = {
 \   'javascript': ['package.json'],
@@ -206,14 +214,10 @@ let g:LanguageClient_rootMarkers = {
 \ }
 
 let g:LanguageClient_serverCommands={
-\   'javascript': ['javascript-typescript-stdio'],
-\   'ruby': ['solargraph', 'stdio'],
-\   'python': ['/usr/local/bin/pyls']
+\    'javascript': ['javascript-typescript-stdio'],
+\   'ruby': ['solargraph', 'stdio']
 \}
 
-let g:deoplete#enable_at_startup = 1
-:set pyxversion=3
-:pythonx import pynvim
 
 nnoremap <leader>lt :call LanguageClient_textDocument_hover()<CR>
 nnoremap <leader>ld :call LanguageClient_textDocument_definition()<CR>
