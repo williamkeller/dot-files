@@ -67,7 +67,7 @@ ZSH_THEME="wkeller"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git-prompt ruby rbenv bundler node npm)
+plugins=(git-prompt tmux node npm)
 
 source $ZSH/oh-my-zsh.sh
 

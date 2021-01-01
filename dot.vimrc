@@ -210,12 +210,14 @@ pythonx import pynvim
 " Language Server Protocol
 let g:LanguageClient_rootMarkers = {
 \   'javascript': ['package.json'],
-\   'ruby': ['Gemfile']
+\   'ruby': ['Gemfile'],
+\   'swift': ['Package.swift']
 \ }
 
 let g:LanguageClient_serverCommands={
-\    'javascript': ['javascript-typescript-stdio'],
-\   'ruby': ['solargraph', 'stdio']
+\   'javascript': ['javascript-typescript-stdio'],
+\   'ruby': ['solargraph', 'stdio'],
+\   'swift': ['sourcekit-lsp']
 \}
 
 
@@ -227,9 +229,33 @@ nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
 
 let signcolumn=1
 
+
 " Testing
 nnoremap tf :TestFile<CR>
 nnoremap tt :TestLast<CR>
 nnoremap ts :TestSuite<CR>
 nnoremap tn :TestNearest<CR>
 
+
+" Turn the background transparent, just for fun
+let t:is_transparent = 1
+function! Toggle_transparent_background()
+  if t:is_transparent == 0
+    hi Normal guibg=#111111 ctermbg=black
+    hi EndOfBuffer term=bold ctermfg=242 ctermbg=234 gui=bold guifg=Blue 
+    let t:is_transparent = 1
+  else
+    hi Normal guibg=NONE ctermbg=NONE
+    hi EndOfBuffer guibg=NONE ctermbg=NONE
+    let t:is_transparent = 0
+  endif
+endfunction
+:call Toggle_transparent_background()
+
+
+" Allow for local customization, but don't error out if file is not
+" " present
+try
+  source ./.vimrc.local
+catch
+endtry
