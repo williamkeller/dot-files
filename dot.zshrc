@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/william/.oh-my-zsh"
@@ -8,7 +8,7 @@ export ZSH="/Users/william/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="wkeller"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="wkeller"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bundler git-prompt ruby tmux node zsh_reload swiftpm)
+plugins=(bundler git-prompt git rbenv ruby tmux node swiftpm zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,12 +86,10 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-export ARCHFLAGS="-arch arm64"
+# Compilation flags only for the M1 mac
+# export ARCHFLAGS="-arch arm64"
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 
-# tmux package doesn't have an alias I'm used to
-alias tn='tmux new-session -s'

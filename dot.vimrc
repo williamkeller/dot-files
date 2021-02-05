@@ -77,7 +77,7 @@ nmap <Leader>f :Files<CR>
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '~/Google Drive/wiki/' }
+\ { 'path': '~/Google Drive/Eclipse Phase/wiki/' }
 \ ]
 
 " nerdtree
@@ -116,8 +116,8 @@ set noswapfile
 
 
 " Line numbering
-" set relativenumber
-set number
+set relativenumber
+" set number
 set numberwidth=4
 
 
