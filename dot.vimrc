@@ -77,7 +77,7 @@ nmap <Leader>f :Files<CR>
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '~/Google Drive/Eclipse Phase/wiki/' }
+\ { 'path': '/Users/william/Google Drive/wiki/' }
 \ ]
 
 " nerdtree
@@ -96,16 +96,6 @@ map <leader>bb :BufExplorer<cr>
 
 " vim-javascript
 let g:javascript_plugin_flow = 1
-
-
-" Colors
-colorscheme harlequin
-set background=dark
-set colorcolumn=110
-highlight ColorColumn ctermbg=darkgray
-
-" Turn of fugly scrollbars in MacVim
-set guioptions=
 
 
 " Swap files and backups
@@ -162,6 +152,10 @@ set laststatus=2
 map <leader>t :!ctags -R <CR><CR>
 
 
+" Snippets
+let g:snipMate = { 'snippet_version' : 1 }
+
+
 " Mouse
 " Don't need it, don't want it
 set mouse=
@@ -190,12 +184,6 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
-" Cursor line
-set cursorline
-hi cursorline cterm=none term=none
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=Grey ctermbg=0
 
 " Allow per-project configuration
 set exrc
@@ -237,24 +225,12 @@ nnoremap ts :TestSuite<CR>
 nnoremap tn :TestNearest<CR>
 
 
-" Turn the background transparent, just for fun
-let t:is_transparent = 1
-function! Toggle_transparent_background()
-  if t:is_transparent == 0
-    hi Normal guibg=#111111 ctermbg=black
-    hi EndOfBuffer term=bold ctermfg=242 ctermbg=234 gui=bold guifg=Blue 
-    let t:is_transparent = 1
-  else
-    hi Normal guibg=NONE ctermbg=NONE
-    hi EndOfBuffer guibg=NONE ctermbg=NONE
-    let t:is_transparent = 0
-  endif
-endfunction
-:call Toggle_transparent_background()
+" Allow for local customization, but don't error out if file is not present
+try
+  source ~/.vimrc.local
+catch
+endtry
 
-
-" Allow for local customization, but don't error out if file is not
-" " present
 try
   source ./.vimrc.local
 catch
