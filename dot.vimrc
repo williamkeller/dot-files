@@ -5,7 +5,6 @@ syntax on
 
 runtime macros/matchit.vim
 
-
 " Remap some keys to make things a little easier on my hands
 let mapleader = ","
 let g:mapleader = ","
@@ -64,12 +63,6 @@ call vundle#begin()
 call vundle#end()
 
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-nmap ; :Buffers<CR>
-nmap <Leader>f :Files<CR>
-" nmap <Leader>t :Tags<CR>
-
 " vimwiki
 let g:vimwiki_list = [
 \ { 'path': '/Users/william/Google Drive/wiki/' }
@@ -79,11 +72,6 @@ let g:vimwiki_list = [
 map <leader>d :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 
-" ack
-" Might be a good idea to do a check to see if ag is present on the system, and if not
-" fall back to ack. It's actually a problem when I pull this down on to a new machine
-" where ag isn't installed.
-let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 
 " bufexplorer
 map <leader>bb :BufExplorer<cr>
