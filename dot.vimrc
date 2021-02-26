@@ -64,11 +64,6 @@ call vundle#begin()
 call vundle#end()
 
 
-"
-" Plugin Configuration
-"
-
-
 " fzf
 set rtp+=/usr/local/opt/fzf
 nmap ; :Buffers<CR>
@@ -185,39 +180,6 @@ nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
 
-" Allow per-project configuration
-set exrc
-set secure
-
-" set rtp+=~/.vim/bundles/LanguageClient-neovim
-let g:deoplete#enable_at_startup = 1
-
-set pyxversion=3
-pythonx import pynvim
-
-" Language Server Protocol
-let g:LanguageClient_rootMarkers = {
-\   'javascript': ['package.json'],
-\   'ruby': ['Gemfile'],
-\   'swift': ['Package.swift']
-\ }
-
-let g:LanguageClient_serverCommands={
-\   'javascript': ['javascript-typescript-stdio'],
-\   'ruby': ['solargraph', 'stdio'],
-\   'swift': ['sourcekit-lsp']
-\}
-
-
-nnoremap <leader>lt :call LanguageClient_textDocument_hover()<CR>
-nnoremap <leader>ld :call LanguageClient_textDocument_definition()<CR>
-nnoremap <leader>lr :call LanguageClient_textDocument_references()<CR>
-nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
-nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
-
-let signcolumn=1
-
-
 " Testing
 nnoremap tf :TestFile<CR>
 nnoremap tt :TestLast<CR>
@@ -225,12 +187,17 @@ nnoremap ts :TestSuite<CR>
 nnoremap tn :TestNearest<CR>
 
 
-" Allow for local customization, but don't error out if file is not present
+" Allow per-project configuration
+set exrc
+set secure
+
+" Allow for local customization
 try
   source ~/.vimrc.local
 catch
 endtry
 
+" Allow for project customization
 try
   source ./.vimrc.local
 catch
