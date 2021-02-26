@@ -126,20 +126,6 @@ set smartindent
 " Signify gutter settings
 let g:signify_vcs_list = [ 'git' ]
 
-" Status line
-" let g:airline_theme='term'
-" let g:lightline = {'colorscheme': 'solorized dark'}
-let g:lightline = {
-\ 'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [ [ 'mode', 'paste' ],
-\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-\ },
-\ 'component_function': {
-\   'gitbranch': 'FugitiveHead'
-\ },
-\ }
-set laststatus=2
 
 " Exuberant ctags
 " let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
