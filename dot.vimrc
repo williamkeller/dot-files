@@ -118,6 +118,10 @@ highlight ColorColumn guibg=#202030
 highlight SignColumn guibg=#202030
 
 highlight Pmenu guibg=Blue
+highlight Folded guibg=NONE
+
+highlight LineNr guifg=Cyan
+highlight CursorLineNr guibg=NONE guifg=Cyan cterm=Bold
 
 " Cursor line - only show the cursor line in the active window
 set cursorline
