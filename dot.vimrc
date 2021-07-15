@@ -105,20 +105,42 @@ map <leader>bb :BufExplorer<cr>
 "
 " Colors
 "
-" Slightly modified iTerm theme "Adventure". I bumped the darkblue color
-" to make it a little darker.
+" Using the iTerm theme "Adventure".
+
+" Use the full color range
+set termguicolors
 
 " Basic theme
 colorscheme harlequin
 set background=dark
 set colorcolumn=90
-highlight ColorColumn ctermbg=darkgray
+highlight ColorColumn guibg=#202030
+highlight SignColumn guibg=#202030
 
-" Cursor line
+highlight Pmenu guibg=Blue
+
+" Cursor line - only show the cursor line in the active window
 set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-highlight CursorLine cterm=bold guibg=#303030 ctermbg=DarkBlue
+highlight CursorLine cterm=bold guibg=#202030
+
+" Turn the background transparent, just for fun
+let t:is_transparent = 1
+function! Toggle_transparent_background()
+  if t:is_transparent == 0
+    hi Normal guibg=#111111 ctermbg=black
+    hi EndOfBuffer term=bold ctermfg=242 ctermbg=234 gui=bold guifg=Blue
+    let t:is_transparent = 1
+  else
+    hi Normal guibg=NONE ctermbg=NONE
+    hi EndOfBuffer guibg=NONE ctermbg=NONE
+    let t:is_transparent = 0
+  endif
+endfunction
+" Leaving untoggled for now, uncomment this for transparent backgrounds
+" :call Toggle_transparent_background()
+
 
 " Turn of fugly scrollbars in MacVim
 set guioptions=
@@ -245,20 +267,6 @@ nnoremap ts :TestSuite<CR>
 nnoremap tn :TestNearest<CR>
 
 
-" Turn the background transparent, just for fun
-let t:is_transparent = 1
-function! Toggle_transparent_background()
-  if t:is_transparent == 0
-    hi Normal guibg=#111111 ctermbg=black
-    hi EndOfBuffer term=bold ctermfg=242 ctermbg=234 gui=bold guifg=Blue 
-    let t:is_transparent = 1
-  else
-    hi Normal guibg=NONE ctermbg=NONE
-    hi EndOfBuffer guibg=NONE ctermbg=NONE
-    let t:is_transparent = 0
-  endif
-endfunction
-:call Toggle_transparent_background()
 
 
 " Allow for local customization, but don't error out if file is not present
