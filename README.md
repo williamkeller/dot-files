@@ -1,5 +1,8 @@
 Dotfiles for my unix environment setup
 
+This scheme assumes the destination machine is running zsh and oh-my-zsh
+
+
 ## Setup
 
 At some point, I'll make an automated way to do this, but I don't use it
