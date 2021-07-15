@@ -114,10 +114,15 @@ set termguicolors
 colorscheme harlequin
 set background=dark
 set colorcolumn=90
+
+highlight CursorLine guibg=#202030
+highlight CursorLineNC guibg=NONE
 highlight ColorColumn guibg=#202030
 highlight SignColumn guibg=#202030
 
-highlight Pmenu guibg=Blue
+highlight Visual guibg=DarkBlue
+
+highlight Pmenu guibg=DarkBlue
 highlight Folded guibg=NONE
 
 highlight LineNr guifg=Cyan
@@ -203,6 +208,7 @@ set laststatus=2
 set noshowmode  " Don't need mode in two places, so turn off the default
 
 map <leader>t :!ctags -R <CR><CR>
+
 
 
 " Snipmate
