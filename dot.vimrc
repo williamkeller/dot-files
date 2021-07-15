@@ -1,14 +1,12 @@
 
-filetype off
 filetype plugin indent on
 syntax on
 
-runtime macros/matchit.vim
 
-
-" Remap some keys to make things a little easier on my hands
+" Remap some the leader key to something closer 
 let mapleader = ","
 let g:mapleader = ","
+
 
 " Unmap the arrow keys; real men use motion keys
 noremap <Up> <NOP>
@@ -16,16 +14,18 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+
 " Some basic configurations
-set hidden  " switch buffers without saving
+set hidden                      " switch buffers without saving
 set backspace=eol,start,indent  " make backspace sane
 set cmdheight=1
-set magic  " make regular expressions sane
-set showmatch  " show matching brackets
+set magic                       " make regular expressions sane
+set showmatch                   " show matching brackets
 
 
 " Bundles
 set rtp+=~/.vim/bundle/Vundle.vim
+
 
 " Call :PluginInstall in vim after
 " making any changes to this section
@@ -46,7 +46,6 @@ call vundle#begin()
   Plugin 'tomtom/tlib_vim'
   Plugin 'garbas/vim-snipmate'
   Plugin 'scrooloose/nerdtree'
-  Plugin 'altercation/vim-colors-solarized'
   Plugin 'pangloss/vim-javascript'
   Plugin 'mileszs/ack.vim'
   Plugin 'jlanzarotta/bufexplorer'
@@ -55,6 +54,8 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'
   Plugin 'mhinz/vim-signify'
   Plugin 'janko/vim-test'
+  Plugin 'michal-h21/vim-zettel'
+  Plugin 'codota/tabnine-vim'
 
   " Language Server support
   Plugin 'Shougo/deoplete.nvim'
@@ -73,16 +74,22 @@ call vundle#end()
 set rtp+=/usr/local/opt/fzf
 nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
-" nmap <Leader>t :Tags<CR>
+
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '~/Google Drive/wiki/' }
+\ { 'path': '/Users/william/Documents/wiki' }
 \ ]
+
 
 " nerdtree
 map <leader>d :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+
+
+" Extend the matching key % to more kinds of blocks
+runtime macros/matchit.vim
+
 
 " ack
 " Might be a good idea to do a check to see if ag is present on the system, and if not
@@ -90,19 +97,28 @@ let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 " where ag isn't installed.
 let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 
-" bufexplorer
+
+" buffer explorer
 map <leader>bb :BufExplorer<cr>
 
 
-" vim-javascript
-let g:javascript_plugin_flow = 1
-
-
+"
 " Colors
+"
+" Slightly modified iTerm theme "Adventure". I bumped the darkblue color
+" to make it a little darker.
+
+" Basic theme
 colorscheme harlequin
 set background=dark
-set colorcolumn=110
+set colorcolumn=90
 highlight ColorColumn ctermbg=darkgray
+
+" Cursor line
+set cursorline
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine cterm=bold guibg=#303030 ctermbg=DarkBlue
 
 " Turn of fugly scrollbars in MacVim
 set guioptions=
@@ -116,8 +132,7 @@ set noswapfile
 
 
 " Line numbering
-" set relativenumber
-set number
+set relativenumber
 set numberwidth=4
 
 
@@ -134,16 +149,16 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set smarttab
-set textwidth=110
+set textwidth=90
 set autoindent
 set smartindent
+
 
 " Signify gutter settings
 let g:signify_vcs_list = [ 'git' ]
 
+
 " Status line
-" let g:airline_theme='term'
-" let g:lightline = {'colorscheme': 'solorized dark'}
 let g:lightline = {
 \ 'colorscheme': 'wombat',
 \ 'active': {
@@ -155,11 +170,13 @@ let g:lightline = {
 \ },
 \ }
 set laststatus=2
+set noshowmode  " Don't need mode in two places, so turn off the default
 
-" Exuberant ctags
-" let g:rails_ctags_arguments = ['--exclude=".git .bundle" -f .tags -R']
-" set tags=.tags;
 map <leader>t :!ctags -R <CR><CR>
+
+
+" Snipmate
+let g:snipMate = { 'snippet_version' : 1 }
 
 
 " Mouse
@@ -190,16 +207,7 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
-" Cursor line
-set cursorline
-hi cursorline cterm=none term=none
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-highlight CursorLine guibg=Grey ctermbg=0
 
-" Allow per-project configuration
-set exrc
-set secure
 
 " set rtp+=~/.vim/bundles/LanguageClient-neovim
 let g:deoplete#enable_at_startup = 1
@@ -253,9 +261,14 @@ endfunction
 :call Toggle_transparent_background()
 
 
-" Allow for local customization, but don't error out if file is not
-" " present
+" Allow for local customization, but don't error out if file is not present
 try
   source ./.vimrc.local
 catch
 endtry
+
+
+" Allow per-project configuration
+set exrc
+set secure
+
