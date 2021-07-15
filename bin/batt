@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# Formats a status line for vim that has the current battery level
+# and whether or not the computer is plugged in.
+#
+# Uses the 'pmset' command, which is specific MacOS. Use on linux will
+# mean finding an alternative for that.
+#
+# Not sure if the sytnax is specific to LightLine or generic vim. When
+# I dump LightLine, I'll probably need to revisit this file.
+
+
+re = /([0-9]*)%; ([a-z ]*);/
+info = `pmset -g batt`.split(/\n/)[1]
+
+parts = info.match re
+
+if parts.nil?
+  puts "#[fg=red][ERR]"
+  exit 0
+end
+
+percentage = parts[1].to_i
+status = parts[2]
+
+status_icon = case status
+when 'charging'
+  '⚡'
+when 'discharging'
+when 'charged'
+  ''
+else
+  '?'
+end
+
+sev = 'green'
+if status == 'discharging'
+  if percentage <= 15
+    sev = 'red'
+  elsif percentage <= 50
+    sev = 'yellow'
+  end
+end
+
+puts "[\#[fg=#{sev}]#{percentage}%#{status_icon}]"

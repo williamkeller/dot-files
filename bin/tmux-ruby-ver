@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+# Formats the current ruby for tmux
+
+local ruby=$(rbenv version-name)
+local gemset=$(rbenv gemset active 2>/dev/null | tr ' ' '+')
+echo -n "#[fg=red]["
+[[ -n "$gemset" ]] && echo -n "${ruby}@${gemset}" || echo -n "${ruby}"
+echo "]"
+

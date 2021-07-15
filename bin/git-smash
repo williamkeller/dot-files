@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: git-smash ref"
+  exit
+fi
+
+git branch -D $1
+git push origin --delete $1
+

@@ -123,6 +123,10 @@ highlight Folded guibg=NONE
 highlight LineNr guifg=Cyan
 highlight CursorLineNr guibg=NONE guifg=Cyan cterm=Bold
 
+highlight NERDTreeExecFile cterm=NONE gui=Bold guifg=Magenta guibg=NONE
+
+" highlight NERDTreeExecFile cterm=NONE
+
 " Cursor line - only show the cursor line in the active window
 set cursorline
 autocmd WinEnter * setlocal cursorline

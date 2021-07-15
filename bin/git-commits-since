@@ -1,0 +1,4 @@
+#!/bin/bash
+# Lists all of the commit since the provided one
+
+git log --oneline $1..

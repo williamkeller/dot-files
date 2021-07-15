@@ -1,0 +1,4 @@
+#!/bin/bash
+# Lists the files that have changed since the referenced commit
+
+git diff --name-only $1..
