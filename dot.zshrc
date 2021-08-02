@@ -68,30 +68,18 @@ ZSH_THEME="wkeller"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx vi-mode bundler git rbenv ruby tmux nvm node zsh_reload swiftpm)
+plugins=(osx bundler git rbenv ruby tmux nvm node zsh_reload swiftpm)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch arm64"
 export C_INCLUDE_PATH="/opt/homebrew/include/"
 export LIBRARY_PATH="/opt/homebrew/lib/"
 
-# Setup nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+# Make FZF ignore node_modules directories
+export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+
 

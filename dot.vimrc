@@ -42,26 +42,30 @@ call vundle#begin()
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-endwise'
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'garbas/vim-snipmate'
+
+
   Plugin 'scrooloose/nerdtree'
   Plugin 'pangloss/vim-javascript'
   Plugin 'mileszs/ack.vim'
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'kana/vim-textobj-user'
   Plugin 'nelstrom/vim-textobj-rubyblock'
-  Plugin 'itchyny/lightline.vim'
   Plugin 'mhinz/vim-signify'
   Plugin 'janko/vim-test'
-  Plugin 'michal-h21/vim-zettel'
-  Plugin 'codota/tabnine-vim'
 
   " Language Server support
   Plugin 'Shougo/deoplete.nvim'
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
   Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
+
+  " Plugin 'codota/tabnine-vim'
+
+
+  " Snippet support
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
 call vundle#end()
 
 
@@ -102,8 +106,11 @@ let g:ackprg = 'ag --vimgrep'  " ag is much faster than ack
 map <leader>bb :BufExplorer<cr>
 
 
-"
-" Colors
+" Snippets
+let g:snipMate = { 'snippet_version' : 1 }
+imap <C-K> <Plug>snipMateNextOrTrigger
+
+
 "
 " Using the iTerm theme "Adventure".
 
@@ -117,8 +124,8 @@ set colorcolumn=90
 
 highlight CursorLine guibg=#202030
 highlight CursorLineNC guibg=NONE
-highlight ColorColumn guibg=#202030
-highlight SignColumn guibg=#202030
+highlight ColorColumn guibg=NONE guifg=Red cterm=bold
+highlight SignColumn guibg=NONE
 
 highlight Visual guibg=DarkBlue
 
@@ -126,11 +133,13 @@ highlight Pmenu guibg=DarkBlue
 highlight Folded guibg=NONE
 
 highlight LineNr guifg=Cyan
-highlight CursorLineNr guibg=NONE guifg=Cyan cterm=Bold
+highlight CursorLineNr guibg=#202030 guifg=Cyan cterm=Bold
 
-highlight NERDTreeExecFile cterm=NONE gui=Bold guifg=Magenta guibg=NONE
+highlight NERDTreeExecFile cterm=NONE guifg=Magenta guibg=NONE
 
-" highlight NERDTreeExecFile cterm=NONE
+highlight StatusLine guibg=darkblue cterm=bold
+highlight StatusLineNC guibg=#202030 cterm=NONE
+
 
 " Cursor line - only show the cursor line in the active window
 set cursorline
@@ -138,21 +147,27 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine cterm=bold guibg=#202030
 
-" Turn the background transparent, just for fun
-let t:is_transparent = 1
-function! Toggle_transparent_background()
-  if t:is_transparent == 0
-    hi Normal guibg=#111111 ctermbg=black
-    hi EndOfBuffer term=bold ctermfg=242 ctermbg=234 gui=bold guifg=Blue
-    let t:is_transparent = 1
-  else
-    hi Normal guibg=NONE ctermbg=NONE
-    hi EndOfBuffer guibg=NONE ctermbg=NONE
-    let t:is_transparent = 0
-  endif
-endfunction
-" Leaving untoggled for now, uncomment this for transparent backgrounds
-" :call Toggle_transparent_background()
+
+" Line numbering
+set relativenumber
+set numberwidth=4
+
+
+" Status line
+set laststatus=2                                       " always show the status line
+
+set statusline=                                        " start on the left side
+set statusline+=%m                                     " modified flag
+set statusline+=\ %f                                   " filename
+set statusline+=\ %r                                   " read-only flag
+
+set statusline+=%=                                     " switch to right side
+
+set statusline+=%y                                     " current filetype
+set statusline+=\ %{FugitiveStatusline()}\ \|          " git status
+set statusline+=\ (%l\/\%L)                            " line numbers
+
+
 
 
 " Turn of fugly scrollbars in MacVim
@@ -166,9 +181,6 @@ set nowb
 set noswapfile
 
 
-" Line numbering
-set relativenumber
-set numberwidth=4
 
 
 " Searching
@@ -193,26 +205,10 @@ set smartindent
 let g:signify_vcs_list = [ 'git' ]
 
 
-" Status line
-let g:lightline = {
-\ 'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [ [ 'mode', 'paste' ],
-\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-\ },
-\ 'component_function': {
-\   'gitbranch': 'FugitiveHead'
-\ },
-\ }
-set laststatus=2
-set noshowmode  " Don't need mode in two places, so turn off the default
-
 map <leader>t :!ctags -R <CR><CR>
 
 
 
-" Snipmate
-let g:snipMate = { 'snippet_version' : 1 }
 
 
 " Mouse
@@ -243,10 +239,21 @@ nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>
 
-
-
-" set rtp+=~/.vim/bundles/LanguageClient-neovim
 let g:deoplete#enable_at_startup = 1
+
+"
+" Language server settings
+"
+
+let g:ycm_language_server = [
+\    {
+\       'name': 'javascript',
+\       'cmdline': 'typescript-language-server --stdio',
+\       'filetypes': [ 'js' ]
+\    }
+\ ]
+
+
 
 set pyxversion=3
 pythonx import pynvim
@@ -255,21 +262,27 @@ pythonx import pynvim
 let g:LanguageClient_rootMarkers = {
 \   'javascript': ['package.json'],
 \   'ruby': ['Gemfile'],
-\   'swift': ['Package.swift']
+\   'swift': ['Package.swift'],
+\   'html': ['package.json']
 \ }
 
 let g:LanguageClient_serverCommands={
 \   'javascript': ['javascript-typescript-stdio'],
 \   'ruby': ['solargraph', 'stdio'],
-\   'swift': ['sourcekit-lsp']
+\   'swift': ['sourcekit-lsp'],
+\   'html': ['html-language-server', '--stdio']
 \}
-
 
 nnoremap <leader>lt :call LanguageClient_textDocument_hover()<CR>
 nnoremap <leader>ld :call LanguageClient_textDocument_definition()<CR>
 nnoremap <leader>lr :call LanguageClient_textDocument_references()<CR>
 nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
 nnoremap <silent> <leader>lrr :call LanguageClient#textDocument_rename()<CR>
+nnoremap <leader>la :call LanguageClient_textDocument_codeAction()<CR>
+nnoremap <leader>ls :call LanguageClient_serverStatusMessage()<CR>
+
+" nnoremap <leader>ld :YcmCompleter GoToDefinition<CR> 
+" nnoremap <leader>lr :YcmCompleter GoToReferences<CR> 
 
 let signcolumn=1
 
@@ -293,4 +306,11 @@ endtry
 " Allow per-project configuration
 set exrc
 set secure
+
+
+
+" function! SyntaxItem()
+"   return synIDattr(synID(line("."),col("."),1),"name")
+" endfunction
+" set statusline+=%{SyntaxItem()}
 
