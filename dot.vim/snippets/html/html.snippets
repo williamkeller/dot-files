@@ -13,8 +13,12 @@ snippet head
 	</head>
 snippet title
 	<title>${0}</title>
-snippet link
+snippet cssl
 	<link href="${0:url}" rel="stylesheet" media="screen">
+snippet cssi
+	<style>
+		${0}
+	</style>
 snippet body
 	<body>
 		${0}
@@ -23,8 +27,12 @@ snippet a
 	<a href="${1:url}">${2:link text}</a>
 snippet img
 	<img src="${1}">${0}</img>
-snippet script
+snippet scrl
 	<script src="${1}"></script>
-snippet --
+snippet scri
+	<script>
+		${0}
+	</script>
+snippet --  Comment
 	<!-- ${0} -->
 
