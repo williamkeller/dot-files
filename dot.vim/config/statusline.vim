@@ -10,10 +10,10 @@ set statusline+=\ %r  " read-only flag
 
 set statusline+=%=    " switch to right side
 
-"" Syntastic 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+"
+" ALE linter output
+"
+set statusline+=\ %{LinterStatus()}\ 
 
 set statusline+=%y    " current filetype
 

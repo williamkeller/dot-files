@@ -7,7 +7,7 @@ set expandtab                  " Convert tabs to spaces
 set shiftwidth=2
 set tabstop=2
 set smarttab
-set textwidth=90               " Autowrap at 90 columns
+set textwidth=80               " Autowrap at 80 columns
 set autoindent
 set smartindent
 set backspace=eol,start,indent " Make backspace smarter

@@ -9,7 +9,7 @@
 # I dump LightLine, I'll probably need to revisit this file.
 
 
-re = /([0-9]*)%; ([a-z ]*);/
+re = /([0-9]*)%; ([A-Za-z ]*);/
 info = `pmset -g batt`.split(/\n/)[1]
 
 parts = info.match re
@@ -22,11 +22,14 @@ end
 percentage = parts[1].to_i
 status = parts[2]
 
+puts status
+
 status_icon = case status
 when 'charging'
   '⚡'
 when 'discharging'
 when 'charged'
+when 'AC attached'
   ''
 else
   '?'

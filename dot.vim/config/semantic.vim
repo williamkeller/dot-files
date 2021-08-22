@@ -2,32 +2,25 @@
 " Semantic language support
 "
 
-let g:deoplete#enable_at_startup = 1
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled=1
 
-set pyxversion=3
-pythonx import pynvim
+nnoremap <silent><leader>lt :ALEHover<CR>
+nnoremap <silent><leader>ld :ALEGoToDefinition<CR>
+nnoremap <silent><leader>lr :ALEFindReferences<CR>
+nnoremap <silent> <leader>la :ALECodeAction<CR>
+nnoremap <silent> <leader>lar :ALERename<CR>
 
-" Language Server Protocol
-let g:LanguageClient_rootMarkers = {
-\   'javascript': ['package.json'],
-\   'ruby': ['Gemfile'],
-\   'swift': ['Package.swift'],
-\   'html': ['package.json']
-\ }
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? 'OK' : printf(
+        \   ' %d⚠️  %d💀 ',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
 
-let g:LanguageClient_serverCommands={
-\   'javascript': ['javascript-typescript-stdio'],
-\   'ruby': ['solargraph', 'stdio'],
-\   'swift': ['sourcekit-lsp'],
-\   'html': ['html-language-server', '--stdio']
-\}
-
-nnoremap <silent><leader>lt :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent><leader>ld :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent><leader>lr :call LanguageClient_textDocument_references()<CR>
-nnoremap <silent><leader>le :call LanguageClient_explainErrorAtPoint()<CR>
-nnoremap <silent> <leader>lrr :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent><leader>la :call LanguageClient_textDocument_codeAction()<CR>
-nnoremap <silent><leader>lss :call LanguageClient_serverStatusMessage()<CR>
-
-let g:LanguageClient_diagnosticsList = 'Location'
+let g:ale_sign_error = '➤'
+let g:ale_sign_warning = '➤'
