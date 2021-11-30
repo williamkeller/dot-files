@@ -104,22 +104,8 @@ source $HOME/.vim/config/testing.vim
 source $HOME/.vim/config/searching.vim
 source $HOME/.vim/config/statusline.vim
 
-
-" Allow for local customization, but don't error out if file is not present
-try
-  source ./.vimrc.local
-catch
-endtry
-
-
 " Allow per-project configuration
 set exrc
 set secure
 
-
-
-" function! SyntaxItem()
-"   return synIDattr(synID(line("."),col("."),1),"name")
-" endfunction
-" set statusline+=%{SyntaxItem()}
 
