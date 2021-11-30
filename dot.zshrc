@@ -68,18 +68,23 @@ ZSH_THEME="wkeller"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(macos bundler git rbenv ruby tmux nvm node zsh_reload swiftpm)
+plugins=(macos bundler git rbenv ruby tmux nvm node zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
 # Compilation flags
-export ARCHFLAGS="-arch arm64"
-export C_INCLUDE_PATH="/opt/homebrew/include/"
-export LIBRARY_PATH="/opt/homebrew/lib/"
+# export ARCHFLAGS="-arch arm64"
+# export C_INCLUDE_PATH="/opt/homebrew/include/"
+# export LIBRARY_PATH="/opt/homebrew/lib/"
 
 # Make FZF ignore node_modules directories
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
+# Defines for Obsidian Portal dev
+export SQL_HOST='localhost'
+export SQL_USER='obsdev'
+export SQL_PASS=''
+export SQL_DATABASE='obsidian_dev'
 
