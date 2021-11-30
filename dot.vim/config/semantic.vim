@@ -24,3 +24,9 @@ endfunction
 
 let g:ale_sign_error = '➤'
 let g:ale_sign_warning = '➤'
+
+
+"
+" Ruby semantic support requires:
+"   install solargraph as a global gem
+"   install rubocop as a project gem
