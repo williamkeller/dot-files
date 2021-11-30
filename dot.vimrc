@@ -39,11 +39,11 @@ call vundle#begin()
   Plugin 'janko/vim-test'
 
   " Language Server support
-  " Plugin 'Shougo/deoplete.nvim'
-  " Plugin 'roxma/nvim-yarp'
-  " Plugin 'roxma/vim-hug-neovim-rpc'
-  " Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
-  Plugin 'dense-analysis/ale'
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
+  " Plugin 'dense-analysis/ale'
 
   " Snippet support
   Plugin 'MarcWeber/vim-addon-mw-utils'
