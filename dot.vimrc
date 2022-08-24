@@ -39,11 +39,11 @@ call vundle#begin()
   Plugin 'janko/vim-test'
 
   " Language Server support
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-  Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
-  " Plugin 'dense-analysis/ale'
+  " Plugin 'Shougo/deoplete.nvim'
+  " Plugin 'roxma/nvim-yarp'
+  " Plugin 'roxma/vim-hug-neovim-rpc'
+  " Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
+  Plugin 'dense-analysis/ale'
 
   " Snippet support
   Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -54,7 +54,8 @@ call vundle#end()
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '/Users/william/Documents/wiki' }
+\ { 'path': '/Users/william/Documents/wiki' },
+\ { 'path': '/Users/william/Documents/coconut-central/wiki' }
 \ ]
 
 
@@ -87,7 +88,7 @@ set list
 " Window splits
 set equalalways  " make new windows equal in size
 
-" Toggle fold with just spacebar
+" Toggle fold with spacebar
 nnoremap <Space> za
 nnoremap z0 :set foldlevel=0<cr>
 nnoremap z1 :set foldlevel=1<cr>

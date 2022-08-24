@@ -3,6 +3,11 @@ snippet ff form_for
 		${0}
 	
 	<% end %>
+snippet fw form_with
+	<%= form_with ${1:obj} do |f| %>
+		${0}
+	
+	<% end %>
 snippet bt belongs_to
 	belongs_to :${1:model}
 snippet hm has_many
@@ -14,4 +19,9 @@ snippet rt redirect_to
 
 snippet ren render
 	render ${0:action or path}
-
+snippets =
+	<%= ${0} %>
+snippet tft turbo_frame_tag
+	<%= turbo_frame_tag "${1:name}" do %>
+		${0}
+	<% end %>

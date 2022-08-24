@@ -10,13 +10,6 @@ set statusline+=\ %r  " read-only flag
 
 set statusline+=%=    " switch to right side
 
-"
-" ALE linter output
-"
-" set statusline+=\ %{LinterStatus()}\ 
-
-set statusline+=%y    " current filetype
-
 " git status
 set statusline+=\ %{FugitiveStatusline()}\ \|
 
