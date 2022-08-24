@@ -30,3 +30,7 @@ nnoremap <silent><leader>ls   :ALESymbolSearch<CR>
 nnoremap <silent><leader>l,   :ALEHover<CR>
 " nnoremap <silent><leader>lf   :call LanguageClient#textDocument_formatting()<CR>
 nnoremap <silent><leader>la   :ALECodeAction<CR>
+
+let g:deoplete#enable_at_startup = 1
+" let g:ale_completion_enabled = 1
+" set completeopt=menu,menuone,preview,noselect,noinsert

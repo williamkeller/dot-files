@@ -1,7 +1,4 @@
-
 .DS_Store
-dot.vim/bundle/*
-!dot.vim/bundle/Vundle.vim
 
 # Temporary files used for development, 
 # that will probably go away

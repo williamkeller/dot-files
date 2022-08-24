@@ -14,42 +14,80 @@ set showmatch                   " show matching brackets
 "
 " Call :PluginInstall in vim after
 " making any changes to this section
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/bundles')
 
-call vundle#begin()
-  Plugin 'vimwiki/vimwiki'
-  Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
-  Plugin 'junegunn/fzf.vim'
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'tpope/vim-rails'
-  Plugin 'tpope/vim-rake'
-  Plugin 'nelstrom/vim-textobj-rubyblock'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-bundler'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-endwise'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'jlanzarotta/bufexplorer'
-  Plugin 'kana/vim-textobj-user'
-  Plugin 'mhinz/vim-signify'
-  Plugin 'janko/vim-test'
+  Plug 'vimwiki/vimwiki'
+"  Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rake'
+  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-endwise'
+  Plug 'scrooloose/nerdtree'
+  Plug 'pangloss/vim-javascript'
+  Plug 'mileszs/ack.vim'
+  Plug 'jlanzarotta/bufexplorer'
+  Plug 'kana/vim-textobj-user'
+  Plug 'mhinz/vim-signify'
+  Plug 'janko/vim-test'
 
-  " Language Server support
-  " Plugin 'Shougo/deoplete.nvim'
-  " Plugin 'roxma/nvim-yarp'
-  " Plugin 'roxma/vim-hug-neovim-rpc'
-  " Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
-  Plugin 'dense-analysis/ale'
-
+  "
   " Snippet support
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'garbas/vim-snipmate'
-call vundle#end()
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+
+  "
+  " Language Server and semantic completions
+  Plug 'dense-analysis/ale'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+call plug#end()
+
+" call vundle#begin()
+"   Plugin 'vimwiki/vimwiki'
+"   Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
+"   Plugin 'junegunn/fzf.vim'
+"   Plugin 'vim-ruby/vim-ruby'
+"   Plugin 'tpope/vim-rails'
+"   Plugin 'tpope/vim-rake'
+"   Plugin 'nelstrom/vim-textobj-rubyblock'
+"   Plugin 'tpope/vim-surround'
+"   Plugin 'tpope/vim-fugitive'
+"   Plugin 'tpope/vim-bundler'
+"   Plugin 'tpope/vim-commentary'
+"   Plugin 'tpope/vim-repeat'
+"   Plugin 'tpope/vim-endwise'
+"   Plugin 'scrooloose/nerdtree'
+"   Plugin 'pangloss/vim-javascript'
+"   Plugin 'mileszs/ack.vim'
+"   Plugin 'jlanzarotta/bufexplorer'
+"   Plugin 'kana/vim-textobj-user'
+"   Plugin 'mhinz/vim-signify'
+"   Plugin 'janko/vim-test'
+
+"   " Language Server support
+"   " Plugin 'Shougo/deoplete.nvim'
+"   " Plugin 'roxma/nvim-yarp'
+"   " Plugin 'roxma/vim-hug-neovim-rpc'
+"   " Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
+"   " Plugin 'dense-analysis/ale'
+
+"   Plugin 'neocolide/coc.nvim', { 'branch': 'release' }
+
+
+"   " Snippet support
+"   Plugin 'MarcWeber/vim-addon-mw-utils'
+"   Plugin 'tomtom/tlib_vim'
+"   Plugin 'garbas/vim-snipmate'
+" call vundle#end()
 
 
 " vimwiki
