@@ -10,15 +10,14 @@ set termguicolors
 " Basic theme
 colorscheme harlequin
 set background=dark
-set colorcolumn=80
+set colorcolumn=90
 
-highlight CursorLine guibg=#FFFFFF
+highlight CursorLine cterm=bold guibg=#303040
 highlight CursorLineNC guibg=NONE
 highlight ColorColumn guibg=NONE guifg=Red cterm=bold
 highlight SignColumn guibg=NONE
 
 highlight Visual guibg=DarkBlue
-
 highlight Pmenu guibg=DarkBlue
 highlight Folded guibg=NONE
 
@@ -35,7 +34,6 @@ highlight StatusLineNC guibg=#202030 cterm=NONE
 set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-highlight CursorLine cterm=bold guibg=#202030
 
 " Turn of fugly scrollbars in MacVim
 set guioptions=
