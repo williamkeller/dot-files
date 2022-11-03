@@ -51,48 +51,11 @@ call plug#begin('~/.vim/bundles')
   Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
 
-" call vundle#begin()
-"   Plugin 'vimwiki/vimwiki'
-"   Plugin 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
-"   Plugin 'junegunn/fzf.vim'
-"   Plugin 'vim-ruby/vim-ruby'
-"   Plugin 'tpope/vim-rails'
-"   Plugin 'tpope/vim-rake'
-"   Plugin 'nelstrom/vim-textobj-rubyblock'
-"   Plugin 'tpope/vim-surround'
-"   Plugin 'tpope/vim-fugitive'
-"   Plugin 'tpope/vim-bundler'
-"   Plugin 'tpope/vim-commentary'
-"   Plugin 'tpope/vim-repeat'
-"   Plugin 'tpope/vim-endwise'
-"   Plugin 'scrooloose/nerdtree'
-"   Plugin 'pangloss/vim-javascript'
-"   Plugin 'mileszs/ack.vim'
-"   Plugin 'jlanzarotta/bufexplorer'
-"   Plugin 'kana/vim-textobj-user'
-"   Plugin 'mhinz/vim-signify'
-"   Plugin 'janko/vim-test'
-
-"   " Language Server support
-"   " Plugin 'Shougo/deoplete.nvim'
-"   " Plugin 'roxma/nvim-yarp'
-"   " Plugin 'roxma/vim-hug-neovim-rpc'
-"   " Plugin 'autozimu/LanguageClient-neovim', { 'pinned': 1 }
-"   " Plugin 'dense-analysis/ale'
-
-"   Plugin 'neocolide/coc.nvim', { 'branch': 'release' }
-
-
-"   " Snippet support
-"   Plugin 'MarcWeber/vim-addon-mw-utils'
-"   Plugin 'tomtom/tlib_vim'
-"   Plugin 'garbas/vim-snipmate'
-" call vundle#end()
-
 
 " vimwiki
 let g:vimwiki_list = [
 \ { 'path': '/Users/william/Documents/wiki' },
+\ { 'path': '/Users/william/Documents/the-one-ring/wiki' },
 \ { 'path': '/Users/william/Documents/coconut-central/wiki' }
 \ ]
 
@@ -147,4 +110,5 @@ source $HOME/.vim/config/statusline.vim
 set exrc
 set secure
 
-
+" Probably not the best place to put this, but I'm in a hurry
+autocmd BufNewFile,BufRead *.html.erb set filetype=html

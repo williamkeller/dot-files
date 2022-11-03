@@ -29,6 +29,14 @@ highlight NERDTreeExecFile cterm=NONE guifg=Magenta guibg=NONE
 highlight StatusLine guibg=darkblue cterm=bold
 highlight StatusLineNC guibg=#202030 cterm=NONE
 
+" highlight ALEError guibg=Red
+" highlight ALEWarning guibg=Green
+" highlight ALEInfo guibg=Yellow
+" highlight ALEStyleError guibg=Blue
+" highlight ALEStyleWarning guibg=Purple
+
+highlight ALEWarning guibg=NONE
+
 
 " Cursor line - only show the cursor line in the active window
 set cursorline
