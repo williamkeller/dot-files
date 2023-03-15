@@ -54,8 +54,8 @@ call plug#end()
 
 " vimwiki
 let g:vimwiki_list = [
-\ { 'path': '/Users/william/Documents/wiki' },
-\ { 'path': '/Users/william/Documents/the-one-ring/wiki' },
+\ { 'path': '/Users/william/Documents/work' },
+\ { 'path': '/Users/william/Documents/games/wiki' },
 \ { 'path': '/Users/william/Documents/coconut-central/wiki' }
 \ ]
 
@@ -111,4 +111,4 @@ set exrc
 set secure
 
 " Probably not the best place to put this, but I'm in a hurry
-autocmd BufNewFile,BufRead *.html.erb set filetype=html
+autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html

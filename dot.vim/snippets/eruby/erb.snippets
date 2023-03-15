@@ -1,6 +1,16 @@
 snippet = <%= .. %>
 	<%= ${0} %>
 
+snippet each
+	<% ${1}.each do %>
+		${0}
+	<% end %>
+
+snippet eachv
+	<% ${1}.each do |${2:variable}| %>
+		${0}
+	<% end %>
+
 snippet ff form_for 
 	<%= form_for ${1:obj} do |f| %>
 		${0}
@@ -8,6 +18,9 @@ snippet ff form_for
 	<% end %>
 
 snippet lt link_to
-	link_to ${1:text}, ${2:path}
+	<%= link_to ${1:text}, ${2:path} %>
+
+snippet partial
+	<%= render partial: ${1:name} %>
 
 
