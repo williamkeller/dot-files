@@ -17,7 +17,8 @@ set showmatch                   " show matching brackets
 call plug#begin('~/.vim/bundles')
 
   Plug 'vimwiki/vimwiki'
-"  Plug 'junegunn/fzf', { 'dir': '/usr/local/opt/fzf' }
+  " Plug 'junegunn/fzf'
+  Plug '/opt/homebrew/opt/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'vim-ruby/vim-ruby'
   Plug 'tpope/vim-rails'

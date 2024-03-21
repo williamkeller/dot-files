@@ -49,4 +49,4 @@ vnoremap K :m '<-2<CR>gv=gv
 " Extend the matching key % to more kinds of blocks
 runtime macros/matchit.vim
 
-imap jj <esc>
+nnoremap <leader>gvd :Gvdiff<cr>

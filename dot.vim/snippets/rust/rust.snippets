@@ -1,0 +1,14 @@
+snippet testmod
+	//
+	// Tests --------------------------------------------------------------------------------
+	//
+	#[cfg(test)]
+	mod tests {
+		user super::*;
+		${0}
+	}
+snippet test
+	#[test]
+	fn test_${1:name}() {
+		${0}
+	}

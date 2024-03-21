@@ -33,3 +33,10 @@ snippet req
 	require '${1:library}'
 snippet rel
 	require_relative '${1:file}'
+snippet ea each
+	${1:collection}.each do |${2:value}|
+		${0}
+	end
+snippet errclass Error class
+	class ${1:class name} < StandardError ; end
+	$0
