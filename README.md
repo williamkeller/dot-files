@@ -10,6 +10,8 @@ often enough now to bother.
 
 #### Prerequisits
 
+neovim (brew)
+
 git (brew)
 
 oh-my-zsh (website)

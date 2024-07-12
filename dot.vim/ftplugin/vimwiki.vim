@@ -1,5 +1,0 @@
-
-
-nnoremap <leader>cm ✓
-
-

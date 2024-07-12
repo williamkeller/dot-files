@@ -1,0 +1,6 @@
+snippet req require
+  require '${0}'
+
+snippet reqr require relative
+  require_relative '${0}'
+
