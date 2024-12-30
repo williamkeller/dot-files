@@ -48,4 +48,6 @@ return require('packer').startup(function(use)
 
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
+
+  use 'simrat39/rust-tools.nvim'
 end)

@@ -23,3 +23,5 @@ vim.opt.scrolloff = 4
 -- vim.opt.colorcolumn = "80"
 
 vim.opt.mouse = ""
+
+vim.opt.exrc = true
