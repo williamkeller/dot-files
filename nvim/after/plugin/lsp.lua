@@ -8,10 +8,18 @@ end)
 
 -- here you can setup the language servers
 
-require'lspconfig'.solargraph.setup{}
-require'lspconfig'.rubocop.setup{}
-require'lspconfig'.sourcekit.setup{}
-require'lspconfig'.rust_analyzer.setup{
+local lspconfig = require('lspconfig')
+
+lspconfig.ruby_lsp.setup({
+  init_options = { 
+    formatter = 'standard',
+    linters = { 'standard' }
+  }
+})
+-- lspconfig.solargraph.setup{}
+lspconfig.rubocop.setup{}
+lspconfig.sourcekit.setup{}
+lspconfig.rust_analyzer.setup{
   settings = {
     ['rust-analyzer'] = {
       diagnostics = {
@@ -20,4 +28,3 @@ require'lspconfig'.rust_analyzer.setup{
     }
   }
 }
-
