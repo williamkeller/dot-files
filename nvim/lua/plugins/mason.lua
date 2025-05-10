@@ -19,14 +19,13 @@ return {
 
       require("mason-lspconfig").setup({
         ensure_installed = {
-	  "ruby-lsp",
-	  "rubocop",
-	  "sorbet",
-	  "standard",
-          "lua_ls",
-          "pyright",
-          "tsserver",
-          "rust_analyzer",
+          "ruby_lsp",
+          -- "solargraph",
+	  -- "rubocop",
+	  -- "sorbet",
+	  -- "standard",
+	        "lua_ls",
+	  --        "rust_analyzer",
         },
         automatic_installation = true,
       })
@@ -34,17 +33,17 @@ return {
       -- Setup LSP configuration
       local lspconfig = require("lspconfig")
 
-      -- Lua
-      lspconfig.lua_ls.setup({})
-
-      -- Python
-      lspconfig.pyright.setup({})
-
-      -- TypeScript/JavaScript
-      lspconfig.tsserver.setup({})
-
-      -- Rust
-      lspconfig.rust_analyzer.setup({})
+      -- -- Lua
+      -- lspconfig.lua_ls.setup({})
+      --
+      -- -- Python
+      -- lspconfig.pyright.setup({})
+      --
+      -- -- TypeScript/JavaScript
+      -- lspconfig.tsserver.setup({})
+      --
+      -- -- Rust
+      -- lspconfig.rust_analyzer.setup({})
 
       -- Global mappings
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
