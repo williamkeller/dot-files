@@ -32,6 +32,7 @@ return {
 
       -- Setup LSP configuration
       local lspconfig = require("lspconfig")
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       -- -- Lua
       -- lspconfig.lua_ls.setup({})
@@ -44,6 +45,12 @@ return {
       --
       -- -- Rust
       -- lspconfig.rust_analyzer.setup({})
+      --
+      -- -- Clang
+      lspconfig.clangd.setup({
+        capabilities = capabilities
+      })
+
 
       -- Global mappings
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
@@ -72,9 +79,11 @@ return {
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
           vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-          vim.keymap.set('n', '<leader>f', function()
-            vim.lsp.buf.format { async = true }
-          end, opts)
+          -- vim.keymap.set('n', '<leader>f', function()
+          --   vim.lsp.buf.format { async = true }
+          -- end, opts)
+          --
+          vim.keymap.set("n", ";h", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
         end,
       })
     end,
