@@ -22,3 +22,5 @@ vim.opt.scrolloff = 4
 vim.opt.mouse = ""
 
 vim.opt.exrc = true
+
+vim.opt.winborder = "rounded"

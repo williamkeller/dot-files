@@ -4,7 +4,7 @@ return {
     branch = "0.1.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      { 
+      {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         config = function()
@@ -40,9 +40,9 @@ return {
     end,
     keys = {
       { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      { "<leader>s", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
-      { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-      { "<leader>h", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
+      { "<leader>s", "<cmd>Telescope live_grep<cr>",  desc = "Live Grep" },
+      { "<leader>b", "<cmd>Telescope buffers<cr>",    desc = "Find Buffers" },
+      { "<leader>h", "<cmd>Telescope help_tags<cr>",  desc = "Help Tags" },
     },
   },
 }
