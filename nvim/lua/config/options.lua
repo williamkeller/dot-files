@@ -24,3 +24,5 @@ vim.opt.mouse = ""
 vim.opt.exrc = true
 
 vim.opt.winborder = "rounded"
+
+vim.cmd.colorscheme "catppuccin-mocha"

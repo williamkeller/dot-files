@@ -1,14 +1,14 @@
 export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/william/.oh-my-zsh"
+# export ZSH="/Users/william/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="wkeller"
-ZSH_THEME="wkeller"
+# ZSH_THEME="wkeller"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,9 +68,14 @@ ZSH_THEME="wkeller"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(macos bundler git rbenv ruby tmux nvm node )
+# plugins=(macos bundler git rbenv ruby tmux nvm node )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
+
+alias ts="tmux new -s "
+alias tl="tmux list-sessions"
+alias ta="tmux attach-session -t "
+alias gst="git status"
 
 export EDITOR='vim'
 
@@ -82,11 +87,6 @@ export EDITOR='vim'
 # Make FZF ignore node_modules directories
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
-# Defines for Obsidian Portal dev
-export SQL_HOST='localhost'
-export SQL_USER='obsdev'
-export SQL_PASS='obs7712!'
-export SQL_DATABASE='obsidian_dev'
 
-
+eval "$(starship init zsh)"
 
