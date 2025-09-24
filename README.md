@@ -14,7 +14,9 @@ neovim (brew)
 
 git (brew)
 
-oh-my-zsh (website)
+ghostty (brew)
+
+starship (brew)
 
 rbenv,ruby,solargraph (brew)
 
@@ -30,18 +32,14 @@ reattach-to-user-namespace (brew)
 
 #### Link each of the dotfiles to your home directory
 
+ln -s $(pwd)/ghostty ~/.config/ghostty
+
 ln -s $(pwd)/dot.zshrc ~/.zshrc
 
-ln -s $(pwd)/dot.vim ~/.vim
+ln -s $(pwd)/nvim ~/.config/nvim
 
-ln -s $(pwd)/dot.vimrc ~/.vimrc
-
-ln -s $(pwd)/dot.tmux.conf ~/.tmux.conf
+ln -s $(pwd)/tmux ~/.config/tmux
 
 I need a way to specify the home directory for cases like Windows. 
-
-#### Vim setup
-
-vim +PluginInstall +qall
 
 

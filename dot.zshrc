@@ -89,4 +89,4 @@ export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
 
 eval "$(starship init zsh)"
-
+eval "$(rbenv init - --no-rehash zsh)"

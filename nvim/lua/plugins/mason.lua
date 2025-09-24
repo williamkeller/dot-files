@@ -20,12 +20,8 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "ruby_lsp",
-          -- "solargraph",
-	  -- "rubocop",
-	  -- "sorbet",
-	  -- "standard",
 	        "lua_ls",
-	  --        "rust_analyzer",
+	        "rust_analyzer",
         },
         automatic_installation = true,
       })
