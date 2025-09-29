@@ -25,3 +25,8 @@ vim.opt.exrc = true
 vim.opt.winborder = "rounded"
 
 vim.cmd.colorscheme "catppuccin-mocha"
+
+-- Set to transparent so ghostty background takes over
+vim.cmd("highlight Normal guibg=NONE")
+vim.cmd("highlight Normal ctermbg=NONE")
+
