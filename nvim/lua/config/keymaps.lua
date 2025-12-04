@@ -14,6 +14,10 @@ vim.keymap.set("n", ",yy", '"+yy')
 vim.keymap.set({"n", "v"}, ",y", '"+y')
 vim.keymap.set("n", ",p", '"+p')
 
+-- Disable the stupid F1 key, that I seem to highlight
+-- every time I push ESC
+vim.keymap.set({"n", "v", "i", "s"}, "<F1>", "<nop>", { noremap = true, silent = true })
+
 
 
 
