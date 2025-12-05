@@ -31,3 +31,10 @@ vim.cmd.colorscheme "catppuccin-mocha"
 vim.cmd("highlight Normal guibg=NONE")
 vim.cmd("highlight Normal ctermbg=NONE")
 
+
+-- Code folding
+vim.opt.foldcolumn = "1"
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable=true
+vim.keymap.set("n", "<Space>", "za")
