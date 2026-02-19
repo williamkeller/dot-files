@@ -43,9 +43,9 @@ return {
       -- lspconfig.rust_analyzer.setup({})
       --
       -- -- Clang
-      lspconfig.clangd.setup({
-        capabilities = capabilities
-      })
+      -- lspconfig.clangd.setup({
+      --   capabilities = capabilities
+      -- })
 
 
       -- Global mappings
