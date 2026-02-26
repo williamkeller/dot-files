@@ -29,23 +29,32 @@ return {
       })
 
       -- Setup LSP configuration
-      local lspconfig = require("lspconfig")
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       -- Lua
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      vim.lsp.config("lua_ls", {
+        capabilities = capabilities
+      })
 
       -- Ruby
-      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
+      vim.lsp.config("ruby_lsp", {
+        capabilities = capabilities
+      })
 
       -- TypeScript/JavaScript
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities
+      })
 
       -- Rust
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+      vim.lsp.config("rust_analyzer", {
+        capabilities = capabilities
+      })
 
       -- Clang
-      lspconfig.clangd.setup({ capabilities = capabilities })
+      vim.lsp.config("clangd", {
+        capabilities = capabilities
+      })
 
       -- Global mappings
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
