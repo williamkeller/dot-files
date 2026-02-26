@@ -10,15 +10,16 @@ return {
         syntax = 'markdown',
         ext = 'md',
         path = '~/Documents/vimwiki/personal',
-        links_space_char = '_'
       },
       {
         -- work wiki
         syntax = 'markdown',
         ext = 'md',
-        path = '~/Documents/vimwiki/work',
-        links_space_char = '_'
+        path = '~/Documents/vimwiki/work'
       }
     }
+  end,
+
+  config = function()
   end
 }

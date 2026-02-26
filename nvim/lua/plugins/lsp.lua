@@ -22,6 +22,8 @@ return {
           "ruby_lsp",
 	        "lua_ls",
 	        "rust_analyzer",
+          "clangd",
+          "ts_ls"
         },
         automatic_installation = true,
       })
@@ -30,23 +32,20 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      -- -- Lua
-      -- lspconfig.lua_ls.setup({})
-      --
-      -- -- Python
-      -- lspconfig.pyright.setup({})
-      --
-      -- -- TypeScript/JavaScript
-      -- lspconfig.tsserver.setup({})
-      --
-      -- -- Rust
-      -- lspconfig.rust_analyzer.setup({})
-      --
-      -- -- Clang
-      lspconfig.clangd.setup({
-        capabilities = capabilities
-      })
+      -- Lua
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
 
+      -- Ruby
+      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
+
+      -- TypeScript/JavaScript
+      lspconfig.ts_ls.setup({ capabilities = capabilities })
+
+      -- Rust
+      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+
+      -- Clang
+      lspconfig.clangd.setup({ capabilities = capabilities })
 
       -- Global mappings
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
@@ -78,7 +77,7 @@ return {
           -- vim.keymap.set('n', '<leader>f', function()
           --   vim.lsp.buf.format { async = true }
           -- end, opts)
-          --
+
           vim.keymap.set("n", ";h", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
         end,
       })
