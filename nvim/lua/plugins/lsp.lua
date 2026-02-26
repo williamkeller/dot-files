@@ -23,7 +23,8 @@ return {
 	        "lua_ls",
 	        "rust_analyzer",
           "clangd",
-          "ts_ls"
+          "ts_ls",
+          "copilot"
         },
         automatic_installation = true,
       })
@@ -53,6 +54,11 @@ return {
 
       -- Clang
       vim.lsp.config("clangd", {
+        capabilities = capabilities
+      })
+
+      -- copilot
+      vim.lsp.config("copilot", {
         capabilities = capabilities
       })
 
