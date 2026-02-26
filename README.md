@@ -8,6 +8,14 @@ This scheme assumes the destination machine is running zsh and oh-my-zsh
 At some point, I'll make an automated way to do this, but I don't use it
 often enough now to bother.
 
+#### Submodules
+
+This repo uses submodules, so after clone this, run
+`git submodule update --init`
+
+Occasionall run `git submodule update` to update the submodules.
+
+
 #### Prerequisits
 
 neovim (brew)
@@ -18,13 +26,13 @@ ghostty (brew)
 
 starship (brew)
 
-rbenv,ruby,solargraph (brew)
+rbenv, ruby, ruby_lsp (brew)
 
-node,npm (brew)
+node, npm (brew)
 
 typescript-language-server (npm)
 
-rustup,rust (website)
+rustup, rust (website)
 
 rls  (`rustup component add rls rust-analysis rust-src`)
 
@@ -42,4 +50,6 @@ ln -s $(pwd)/tmux ~/.config/tmux
 
 I need a way to specify the home directory for cases like Windows. 
 
+#### Tmux additions
 
+When tmux is run for the first time, do <leader>+I to install plugins.
