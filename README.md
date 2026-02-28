@@ -48,6 +48,8 @@ ln -s $(pwd)/nvim ~/.config/nvim
 
 ln -s $(pwd)/tmux ~/.config/tmux
 
+ln -s $(pwd)/starship.toml ~/.config/starship.toml
+
 I need a way to specify the home directory for cases like Windows. 
 
 #### Tmux additions
