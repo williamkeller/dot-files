@@ -1,0 +1,122 @@
+# Comment line
+
+# format = """
+# $directory\n$character
+# """
+format = """
+$directory  $cpp$ruby$rust$git_branch$git_status\n$character
+"""
+continuation_prompt = "[.](bright-black) "
+add_newline = false
+follow_symlinks = true
+
+[character]
+format = "$symbol "
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+vimcmd_visual_symbol = "[❮](bold yellow)"
+vimcmd_replace_symbol = "[❮](bold purple)"
+vimcmd_replace_one_symbol = "[❮](bold purple)"
+disabled = false
+
+[cpp]
+format = "[$symbol($version(-$name) )]($style)"
+version_format = "v${raw}"
+style = "149 bold"
+symbol = "C++ "
+disabled = false
+detect_extensions = [
+    "cpp",
+    "cc",
+    "cxx",
+    "c++",
+    "hpp",
+    "hh",
+    "hxx",
+    "h++",
+    "tcc",
+]
+detect_files = ["CMakeLists.txt"]
+detect_folders = []
+commands = [
+    [
+    "c++",
+    "--version",
+],
+    [
+    "g++",
+    "--version",
+],
+    [
+    "clang++",
+    "--version",
+],
+]
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+use_logical_path = true
+style = "cyan bold"
+read_only = "🔒"
+read_only_style = "red"
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
+style = "bold purple"
+truncation_length = 9223372036854775807
+truncation_symbol = "…"
+only_attached = false
+always_show_remote = false
+ignore_branches = []
+disabled = false
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "red bold"
+stashed = '\$'
+ahead = "⇡"
+behind = "⇣"
+up_to_date = ""
+diverged = "⇕"
+conflicted = "="
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+typechanged = ""
+ignore_submodules = false
+disabled = false
+use_git_executable = true
+
+[ruby]
+format = "[$symbol($version )]($style)"
+version_format = "v${raw}"
+symbol = "💎 "
+style = "bold red"
+disabled = false
+detect_extensions = ["rb"]
+detect_files = [
+    "Gemfile",
+    ".ruby-version",
+]
+detect_folders = []
+detect_variables = [
+    "RUBY_VERSION",
+    "RBENV_VERSION",
+]
+
+[rust]
+format = "[$symbol($version )]($style)"
+version_format = "v${raw}"
+symbol = "🦀 "
+style = "bold red"
+disabled = false
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+detect_folders = []
+
