@@ -4,7 +4,9 @@ return {
 
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.config").setup({
+      local config = require("nvim-treesitter.config")
+
+      config.setup({
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
         ensure_installed = { "ruby", "lua", "vim", "vimdoc", "query", 
           "javascript", "typescript", "python", "rust", "c", "cpp" },
