@@ -10,3 +10,13 @@ font-size = 20
 background-image = ~/.config/ghostty/backgrounds/dark-water-1.jpeg
 background-image-fit = cover
 background-image-opacity = 0.15
+
+window-save-state = never
+quit-after-last-window-closed = true
+keybind = global:end=toggle_quick_terminal
+
+
+
+
+
+
