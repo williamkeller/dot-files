@@ -4,10 +4,6 @@ export EDITOR='vim'
 
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
-eval "$(starship init zsh)"
-eval "$(rbenv init - --no-rehash zsh)"
-
-
 #
 # Aliases
 #
@@ -29,3 +25,10 @@ alias be="bundle exec"
 # Vim
 alias v="nvim ."
 
+
+eval "$(starship init zsh)"
+eval "$(rbenv init - --no-rehash zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Local shell settings
+[ -f ~/.local.zsh ] && source ~/.local.zsh
