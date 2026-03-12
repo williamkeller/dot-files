@@ -7,9 +7,6 @@ return {
         suggestion = {
           enabled = true,
           auto_trigger = true,
-          keymap = {
-            accept = "<C-CR>",
-          },
         },
         panel = { enabled = false },
         filetypes = { VimspectorPrompt = false },
