@@ -36,7 +36,13 @@ return {
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = false }),
           ['<Tab>'] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
+            local ok, sidekick = pcall(require, "sidekick")
+            local copilot = require("copilot.suggestion")
+            if ok and sidekick.nes_jump_or_apply() then
+              -- applied or jumped to next edit suggestion
+            elseif copilot.is_visible() then
+              copilot.accept()
+            elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
             else
               fallback()
