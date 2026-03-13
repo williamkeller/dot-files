@@ -7,8 +7,7 @@ return {
     vim.g.vimwiki_links_space_char = '-'
     vim.g.vimwiki_list = {
       {
-        path = '~/vimwiki/',
-        links_space_char = '-'
+        path = '~/vimwiki'
       }
     }
   end,
