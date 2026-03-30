@@ -1,7 +1,6 @@
 Dotfiles for my unix environment setup
 
-This scheme assumes the destination machine is running zsh and oh-my-zsh
-
+This scheme assumes the destination machine is running zsh
 
 ## Setup
 
@@ -17,6 +16,8 @@ Occasionall run `git submodule update` to update the submodules.
 
 
 #### Prerequisits
+
+stow (brew)
 
 neovim (brew)
 
@@ -40,15 +41,7 @@ reattach-to-user-namespace (brew)
 
 #### Link each of the dotfiles to your home directory
 
-ln -s $(pwd)/ghostty ~/.config/ghostty
-
-ln -s $(pwd)/dot.zshrc ~/.zshrc
-
-ln -s $(pwd)/nvim ~/.config/nvim
-
-ln -s $(pwd)/tmux ~/.config/tmux
-
-ln -s $(pwd)/starship.toml ~/.config/starship.toml
+stow -t ~ ghostty zsh nvim tmux starship
 
 I need a way to specify the home directory for cases like Windows. 
 
