@@ -7,6 +7,7 @@ return {
         suggestion = {
           enabled = true,
           auto_trigger = true,
+          keymap = { accept = false },
         },
         panel = { enabled = false },
         filetypes = { VimspectorPrompt = false },
@@ -85,6 +86,12 @@ return {
         function() require("sidekick.cli").prompt() end,
         mode = { "n", "x" },
         desc = "Sidekick Select Prompt",
+      },
+      {
+        "<C-Space>",
+        "<C-\\><C-n>",
+        mode = { "t" },
+        desc = "Exit terminal mode",
       },
       -- Example of a keybinding to open Claude directly
       {
