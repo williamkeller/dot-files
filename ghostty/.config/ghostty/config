@@ -15,6 +15,7 @@ window-save-state = never
 quit-after-last-window-closed = true
 keybind = global:end=toggle_quick_terminal
 
+custom-shader = shaders/cursor_warp.glsl
 
 
 
