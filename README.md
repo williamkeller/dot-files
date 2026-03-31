@@ -21,7 +21,7 @@ stow (brew)
 
 neovim (brew)
 
-git (brew)
+git, gh (brew)
 
 ghostty (brew)
 
