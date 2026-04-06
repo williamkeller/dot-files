@@ -10,6 +10,7 @@ reattach-to-user-namespace
 docker
 fzf
 gh
+todo-txt
 
 # Cask installs
 aerospace
