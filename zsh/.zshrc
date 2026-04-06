@@ -11,6 +11,7 @@ export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 alias ts="tmux new -s "
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t "
+alias gtd="todo.sh "
 
 # Git
 alias gst="git status"

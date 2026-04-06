@@ -23,9 +23,11 @@ return {
           backend = "tmux",
           enabled = true,
         },
-        keys = {
-          buffers = false, -- reclaim <C-b> for page backward
-          files   = false, -- reclaim <C-f> for page forward
+        win = { 
+          keys = {
+            buffers = false, -- reclaim <C-b> for page backward
+            files   = false, -- reclaim <C-f> for page forward
+          },
         },
       },
     },
