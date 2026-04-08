@@ -2,7 +2,7 @@
 theme = Catppuccin Mocha
 background-opacity = 1.0
 background-blur-radius = 20
-window-decoration = true
+window-decoration = false
 
 font-family = JetBrains Mono Regular
 font-size = 20
@@ -13,7 +13,7 @@ background-image-opacity = 0.15
 
 window-save-state = never
 quit-after-last-window-closed = true
-keybind = global:end=toggle_quick_terminal
+keybind = global:page_down=toggle_quick_terminal
 
 custom-shader = shaders/cursor_warp.glsl
 

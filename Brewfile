@@ -11,6 +11,7 @@ docker
 fzf
 gh
 todo-txt
+aerospace
 
 # Cask installs
 aerospace
