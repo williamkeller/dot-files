@@ -11,7 +11,6 @@ export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 alias ts="tmux new -s "
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t "
-alias gtd="todo.sh "
 
 # Git
 alias gst="git status"
@@ -24,8 +23,14 @@ alias oops="git reset HEAD~1"
 alias be="bundle exec"
 
 # Vim
-alias v="nvim ."
+alias v="nvim . "
+alias vim="nvim"
 
+# Todo
+alias td="todo.sh"
+alias tdl="todo.sh list"
+alias tdc="todo.sh listcon"
+alias tdp="todo.sh listproj"
 
 eval "$(starship init zsh)"
 eval "$(rbenv init - --no-rehash zsh)"
