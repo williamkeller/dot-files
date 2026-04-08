@@ -39,9 +39,10 @@ rls  (`rustup component add rls rust-analysis rust-src`)
 
 reattach-to-user-namespace (brew)
 
+
 #### Link each of the dotfiles to your home directory
 
-stow -t ~ ghostty zsh nvim tmux starship todo-txt
+stow -t ~ ghostty zsh nvim tmux starship todo-txt aerospace
 
 I need a way to specify the home directory for cases like Windows. 
 
