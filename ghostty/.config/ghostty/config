@@ -14,6 +14,7 @@ background-image-opacity = 0.15
 window-save-state = never
 quit-after-last-window-closed = true
 keybind = global:page_down=toggle_quick_terminal
+keybind = global:f6=toggle_quick_terminal
 
 custom-shader = shaders/cursor_warp.glsl
 

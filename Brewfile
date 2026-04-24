@@ -1,19 +1,40 @@
-# List of brew commands to setup a MacOS machine
-
-stow
-neovim
-starship
-tmux
-rbenv
-ruby-build
-reattach-to-user-namespace
-docker
-fzf
-gh
-todo-txt
-aerospace
-
-# Cask installs
-aerospace
-claude-code
-ghostty
+tap "felixkratz/formulae"
+tap "nikitabobko/tap"
+brew "cmatrix"
+brew "colima"
+brew "docker"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "fontconfig"
+brew "fzf"
+brew "gh"
+brew "go"
+brew "lazydocker"
+brew "libpq"
+brew "libsodium"
+brew "neovim"
+brew "sqlite"
+brew "node"
+brew "rbenv"
+brew "reattach-to-user-namespace"
+brew "ripgrep"
+brew "ruby-install"
+brew "solargraph"
+brew "starship"
+brew "stow"
+brew "teleport"
+brew "the_silver_searcher"
+brew "tmux"
+brew "todo-txt"
+brew "uv"
+brew "felixkratz/formulae/sketchybar"
+cask "1password-cli"
+cask "nikitabobko/tap/aerospace"
+cask "claude-code"
+cask "docker-desktop"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-iosevka-term-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "ghostty"
