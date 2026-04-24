@@ -40,6 +40,8 @@ return {
             local copilot_ok, copilot = pcall(require, "copilot.suggestion")
             if ok and sidekick.nes_jump_or_apply() then
               -- applied or jumped to next edit suggestion
+            elseif cmp.visible() then
+              cmp.select_next_item()
             elseif copilot_ok and copilot.is_visible() then
               copilot.accept()
             elseif luasnip.expand_or_jumpable() then
@@ -48,7 +50,7 @@ return {
               fallback()
             end
           end, { "i", "s" }),
-          ['<S-Tab'] = cmp.mapping(function(fallback)
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
