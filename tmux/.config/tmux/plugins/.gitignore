@@ -1,0 +1,4 @@
+# TPM-installed plugins — managed by tpm, not git
+*
+!tpm
+!.gitignore
