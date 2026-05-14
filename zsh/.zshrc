@@ -4,7 +4,6 @@ export EDITOR='nvim'
 
 export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 
-#
 # Aliases
 #
 # Tmux
@@ -28,6 +27,7 @@ alias vim="nvim"
 
 # Todo
 alias td="todo.sh"
+alias tda="todo.sh add"
 alias tdl="todo.sh list"
 alias tdc="todo.sh listcon"
 alias tdp="todo.sh listproj"

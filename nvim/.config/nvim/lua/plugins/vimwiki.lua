@@ -7,6 +7,8 @@ return {
     vim.g.vimwiki_links_space_char = '-'
     vim.g.vimwiki_list = {
       {
+        syntax = 'markdown',
+        ext = 'md',
         path = '~/vimwiki'
       }
     }
