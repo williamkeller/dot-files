@@ -2,7 +2,17 @@ export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/loc
 
 export EDITOR='nvim'
 
-export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+# export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude node_modules'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="
+  --height 40%
+  --layout reverse
+  --border
+  --preview 'bat --color=always --line-range :50 {}'
+  --preview-window right:50%:hidden
+  --bind '?:toggle-preview'
+"
 
 # Aliases
 #
