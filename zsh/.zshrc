@@ -32,7 +32,7 @@ alias oops="git reset HEAD~1"
 alias be="bundle exec"
 
 # Vim
-alias v="nvim . "
+alias v="nvim"
 alias vim="nvim"
 
 # Todo
@@ -40,6 +40,7 @@ alias td="todo.sh"
 alias tda="todo.sh add"
 alias tdl="todo.sh list"
 alias tdc="todo.sh listcon"
+alias tdd="todo.sh done"
 alias tdp="todo.sh listproj"
 
 eval "$(starship init zsh)"
