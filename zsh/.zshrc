@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$HOME/.luarocks/bin:$PATH
 
 export EDITOR='nvim'
 
@@ -13,6 +13,8 @@ export FZF_DEFAULT_OPTS="
   --preview-window right:50%:hidden
   --bind '?:toggle-preview'
 "
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 
 # Aliases
 #
