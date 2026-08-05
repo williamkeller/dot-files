@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$HOME/.luarocks/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/opt/workbrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/fzf/bin:$PATH
 
 export EDITOR='nvim'
 
@@ -21,7 +21,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 # Tmux
 alias ts="tmux new -s "
 alias tl="tmux list-sessions"
-alias ta="tmux attach-session -t "
+# alias ta="tmux attach-session -t "
 
 # Git
 alias gst="git status"
@@ -50,4 +50,4 @@ eval "$(rbenv init - --no-rehash zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Local shell settings
-[ -f ~/.local.zsh ] && source ~/.local.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
