@@ -15,36 +15,9 @@ This repo uses submodules, so after clone this, run
 Occasionall run `git submodule update` to update the submodules.
 
 
-#### Prerequisits
-
-stow (brew)
-
-neovim (brew)
-
-git, gh (brew)
-
-ghostty (brew)
-
-starship (brew)
-
-rbenv, ruby, ruby_lsp (brew)
-
-node, npm (brew)
-
-typescript-language-server (npm)
-
-rustup, rust (website)
-
-rls  (`rustup component add rls rust-analysis rust-src`)
-
-reattach-to-user-namespace (brew)
-
-
 #### Link each of the dotfiles to your home directory
 
-stow -t ~ ghostty zsh nvim tmux starship todo-txt aerospace
-
-I need a way to specify the home directory for cases like Windows. 
+stow -t ~ *
 
 #### Tmux additions
 

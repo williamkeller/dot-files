@@ -4,7 +4,8 @@
       "mcp__notion__notion-search",
       "mcp__notion__notion-fetch",
       "Bash(todo.sh add:*)",
-      "Bash(todo.sh list:*)"
+      "Bash(todo.sh list:*)",
+      "mcp__plugin_slack_slack__slack_search_users"
     ]
   }
 }
