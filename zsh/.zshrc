@@ -29,6 +29,7 @@ alias gd="git diff"
 alias gcp="git cherry-pick"
 alias gundo="git reset HEAD"
 alias oops="git reset HEAD~1"
+alias gls="git log --pretty=format:'%h%x09%an%x09%s'"
 
 # Ruby
 alias be="bundle exec"
