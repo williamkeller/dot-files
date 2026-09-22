@@ -11,6 +11,7 @@ return {
     local state = {
       current_key = nil,
       count = 0,
+      enabled = false,
     }
 
     local motion_keys = { h = true, j = true, k = true, l = true }
@@ -38,6 +39,8 @@ return {
     end
 
     local function handle_motion(key)
+      if not state.enabled then return end
+
       if state.current_key == key then
         state.count = state.count + 1
       else
@@ -62,5 +65,29 @@ return {
         return key
       end, { expr = true, noremap = true, silent = true })
     end
+
+    vim.api.nvim_create_user_command("Motion", function(opts)
+      local arg = opts.args
+      if arg == "enable" then
+        state.enabled = true
+        reset()
+        vim.notify("motion-alert enabled")
+      elseif arg == "disable" then
+        state.enabled = false
+        reset()
+        vim.notify("motion-alert disabled")
+      elseif arg == "toggle" then
+        state.enabled = not state.enabled
+        reset()
+        vim.notify("motion-alert " .. (state.enabled and "enabled" or "disabled"))
+      else
+        vim.notify("Usage: Motion enable|disable|toggle", vim.log.levels.ERROR)
+      end
+    end, {
+      nargs = 1,
+      complete = function()
+        return { "enable", "disable", "toggle" }
+      end,
+    })
   end,
 }
