@@ -41,12 +41,14 @@ default-root-container-orientation = 'auto'
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh']
+
 # List of workspaces that should stay alive even when they contain no windows,
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 persistent-workspaces = [
-  "B", "T", "C", "P",
+  "B", "T", "C", "N",
   "1", "2", "3", "4", "5", "6", "7", "8", "9"
 ]
 
@@ -73,7 +75,7 @@ on-mode-changed = []
     inner.vertical =   0
     outer.left =       0
     outer.bottom =     0
-    outer.top =        0
+    outer.top =        0 
     outer.right =      0
 
 
@@ -157,7 +159,7 @@ on-mode-changed = []
     alt-t = 'workspace T'  # terminal
     alt-b = 'workspace B'  # browser
     alt-c = 'workspace C'  # chat (slack, discord, etc)
-    alt-p = 'workspace P'  # don't remember, I assume it's important
+    alt-n = 'workspace N'  # notion
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -172,7 +174,7 @@ on-mode-changed = []
     alt-shift-t = 'move-node-to-workspace T'
     alt-shift-b = 'move-node-to-workspace B'
     alt-shift-c = 'move-node-to-workspace C'
-    alt-shift-p = 'move-node-to-workspace P'
+    alt-shift-n = 'move-node-to-workspace N'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'

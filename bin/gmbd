@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Git branch mass delete
+# Whacks a bunch of branches at the same time, by doing a multi-select in fzf.
+# This only deletes the local copy, nothing upstream 
+BRANCHES=$(git branch | grep -v '^\*' | fzf -m)
+
+if [ -z "$BRANCHES" ]; then
+  exit 1
+fi
+
+echo "Removing branches:"
+echo "$BRANCHES"
+read -rp "Proceed? [y/N] " CONFIRM
+
+if [[ ! "$CONFIRM" =~ ^[Yy]$ ]]; then
+  exit 1
+fi
+
+echo "$BRANCHES" | xargs git branch -D
