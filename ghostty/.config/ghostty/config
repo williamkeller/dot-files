@@ -15,6 +15,10 @@ quit-after-last-window-closed = true
 keybind = global:page_down=toggle_quick_terminal
 keybind = global:f6=toggle_quick_terminal
 
+# Scroll scrollback like vim/tmux copy-mode (bare shell, no multiplexer)
+keybind = super+u=scroll_page_fractional:-0.5
+keybind = super+d=scroll_page_fractional:0.5
+
 custom-shader = shaders/cursor_warp.glsl
 
 link-url = true
