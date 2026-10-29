@@ -52,3 +52,24 @@ eval "$(rbenv init - --no-rehash zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+
+
+# Pair programming through upterm
+function pair() {
+  if [ -n "$TMUX" ]; then
+    echo "Already in a tmux session. Exit the current session before starting a new pair session."
+    return 1
+  fi
+
+  tmux has-session -t pair 2>/dev/null || tmux new -s pair -d || return 1
+
+  # run inside upterm so UPTERM_ADMIN_SOCKET is set and `upterm session current` works
+  upterm host --force-command 'tmux attach -t pair' -- zsh -c '
+    upterm session current \
+      | sed "s/\x1b\[[0-9;]*m//g" \
+      | grep -m1 -oE "ssh [[:alnum:]_-]+@[^[:space:]]+" \
+      | tr -d "\n" \
+      | pbcopy
+    exec tmux attach -t pair \; display-message "Copied upterm SSH address to clipboard"
+  '
+}
