@@ -1,3 +1,6 @@
 [submodule "tmux/.config/tmux/plugins/tpm"]
 	path = tmux/.config/tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule "ghostty/.config/ghostty/shaders"]
+	path = ghostty/.config/ghostty/shaders/cursor_shaders
+	url = https://github.com/sahaj-b/cursor-shaders

@@ -19,6 +19,6 @@ keybind = global:f6=toggle_quick_terminal
 keybind = super+u=scroll_page_fractional:-0.5
 keybind = super+d=scroll_page_fractional:0.5
 
-custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/cursor_shaders/ghostty/cursor_warp.glsl
 
 link-url = true
